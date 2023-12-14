@@ -1,0 +1,18 @@
+::ng-deep .p-datatable .p-datatable-thead > tr > th{
+    color: #6E6893;
+    font-size: 14px !important;
+    border-bottom: 1px solid #efefef !important;
+    padding: 10px 3px;
+}
+::ng-deep .p-datatable .p-datatable-tbody > tr > td{
+    font-size: 12px !important;
+    border-bottom: 1px solid #efefef !important;
+    padding: 10px 3px;
+}
+.table-card{
+    box-shadow: 1px 1px 5px 1px #a0a8ab;
+}
+.custom-filter-btn:hover{
+    color: #ffffff !important;
+    background-color: #6D5BD0 !important;
+}
