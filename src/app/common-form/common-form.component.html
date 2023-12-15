@@ -1,0 +1,11 @@
+<div  *ngFor="let qs of data">
+
+        <span class="p-float-label">
+            <input pInputText type="{{qs.questionDataType}}" id="{{qs.questionCode}}" [(ngModel)]="qs.answer" />
+            <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
+        </span>
+</div>
+
+
+
+<!-- <button class="btn btn-success" (click)="getQuestionByEntityCode()">PAY NOW</button> -->

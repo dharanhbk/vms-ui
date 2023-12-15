@@ -10,6 +10,11 @@ import { ButtonModule } from 'primeng/button';
 import { TopMenuBarComponent } from './common/top-menu-bar/top-menu-bar.component';
 import { TransactionService } from './services/transaction-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { CommonFormComponent } from './common-form/common-form.component';
+import { HomeComponent } from './home/home.component';
+import { InputTextModule } from 'primeng/inputtext';
 // import { CommonFormsComponent } from './common/common-forms/common-forms.component';
 
 @NgModule({
@@ -18,14 +23,19 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentGatewayComponent,
     CommonTableComponent,
     TopMenuBarComponent,
+    CommonFormComponent,
+    HomeComponent
     // CommonFormsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     TableModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    InputTextModule
   ],
   providers: [TransactionService],
   bootstrap: [AppComponent]

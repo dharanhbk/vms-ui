@@ -1,5 +1,9 @@
 <div class="table-card p-3">
-  <p-table [columns]="cols" [value]="products">
+  <p-table [columns]="headers" [value]="tableData" *ngIf="flag" 
+    dataKey="id"
+    [paginator]="true" [rows]="5"
+    [showCurrentPageReport]="true" [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10, 25, 50]">
     <ng-template pTemplate="caption">
       <div class="align-items-center justify-content-between">
         <button class="btn btn-sm mb-1 custom-filter-btn" style="color: #6D5BD0;
@@ -9,9 +13,9 @@
         <span class="p-input-icon-left ms-3">
           <i class="pi pi-search me-2" style="color: #6D5BD0;"></i>
           <input type="text" placeholder="Search" class="form-control-sm" style="color: #6D5BD0;
-          border: 1px solid #6D5BD0; border-radius: 5px;"/>
-      </span>
-      <button class="btn btn-sm" style="color: #f0eff3;
+          border: 1px solid #6D5BD0; border-radius: 5px;" />
+        </span>
+        <button class="btn btn-sm" style="color: #f0eff3;
         background-color: #6D5BD0; float: right;">
           SEND REMAINDER
         </button>
@@ -19,19 +23,33 @@
       </div>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
-        <tr>
-            <th *ngFor="let col of columns">
-                {{ col.header.toUpperCase() }}
-            </th>
-        </tr>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col}}
+        </th>
+      </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr >
-            <td *ngFor="let col of columns">
-                <span *ngIf="col.field !==  '#'">{{ rowData[col.field] }}</span>
-                <span *ngIf="col.field ===  '#'"><em class="pi pi-ellipsis-v"></em></span>
-            </td>
-        </tr>
+
+    <ng-template pTemplate="body" let-rowData let-rowIdx="rowIndex" let-colData="columns" let-editing="editing">
+      <tr>
+          <td *ngFor="let col of colData; index as colIdx;colIdx+1"
+              [pEditableColumn]="rowData[colIdx]" pEditableColumnField="colIdx">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="rowData[colIdx]" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ rowData[colIdx]}}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          </tr>
     </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template> 
   </p-table>
 </div>
