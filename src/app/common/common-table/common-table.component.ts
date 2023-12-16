@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem, MessageService } from 'primeng/api';
 import { BookingService } from 'src/app/services/booking-service.service';
 
 @Component({
@@ -13,11 +14,11 @@ export class CommonTableComponent implements OnInit {
   flag: boolean = false;
   first = 0;
   rows = 10;
-  idx=0;
+  idx = 0;
 
   tableData!: any[][];
 
-  constructor(private _bookingService: BookingService) { }
+  constructor(private _bookingService: BookingService, private messageService: MessageService) { }
 
   getBookingDetails() {
     this._bookingService.getBookingDetailsByEntityCode('1').subscribe({
@@ -38,10 +39,6 @@ export class CommonTableComponent implements OnInit {
     // this.idx = Array.from(Array(n).keys());
     this.flag = true;
     console.log(this.tableData + " " + this.headers);
-  }
-
-  ngOnInit() {
-    this.getBookingDetails();
   }
 
   next() {
@@ -67,6 +64,43 @@ export class CommonTableComponent implements OnInit {
 
   isFirstPage(): boolean {
     return this.tableData ? this.first === 0 : true;
+  }
+
+  items!: MenuItem[];
+
+  // constructor(private messageService: MessageService) {}
+
+  ngOnInit() {
+    this.getBookingDetails();
+    this.items = [
+      {
+        icon: 'pi pi-pencil',
+        command: () => {
+          this.messageService.add({ severity: 'info', summary: 'Add', detail: 'Data Added' });
+        }
+      },
+      {
+        icon: 'pi pi-refresh',
+        command: () => {
+          this.messageService.add({ severity: 'success', summary: 'Update', detail: 'Data Updated' });
+        }
+      },
+      {
+        icon: 'pi pi-trash',
+        command: () => {
+          this.messageService.add({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
+        }
+      },
+      {
+        icon: 'pi pi-upload',
+        routerLink: ['/fileupload']
+      },
+      {
+        icon: 'pi pi-external-link',
+        target: '_blank',
+        url: 'http://angular.io'
+      }
+    ];
   }
 
 }

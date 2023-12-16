@@ -1,5 +1,5 @@
 ::ng-deep .p-datatable .p-datatable-thead > tr > th{
-    color: #6E6893;
+    color: #131314;
     font-size: 14px !important;
     border-bottom: 1px solid #efefef !important;
     padding: 10px 3px;
@@ -7,6 +7,7 @@
 ::ng-deep .p-datatable .p-datatable-tbody > tr > td{
     font-size: 12px !important;
     border-bottom: 1px solid #efefef !important;
+    // border-left: 1px solid #efefef !important;
     padding: 10px 3px;
 }
 .table-card{
@@ -15,4 +16,25 @@
 .custom-filter-btn:hover{
     color: #ffffff !important;
     background-color: #6D5BD0 !important;
+}
+
+:host ::ng-deep {
+    .p-progressbar {
+        height: .5rem;
+        background-color: #D8DADC;
+    
+        .p-progressbar-value {
+            background-color: #607D8B;
+        }
+    }
+}
+
+:host ::ng-deep {
+    .speeddial-linear-demo {
+
+        .p-speeddial-direction-right {
+            left: 0;
+            top: calc(50% - 2rem);
+        }
+    }
 }
