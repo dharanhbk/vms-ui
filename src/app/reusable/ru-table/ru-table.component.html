@@ -1,0 +1,83 @@
+<div class="table-card p-3">
+    <p-table [columns]="headers" 
+        [value]="tableData" *ngIf="flag" #dt1 
+        [scrollable]="true" 
+        scrollHeight="500px"
+        dataKey="id" 
+        [paginator]="true" 
+        [rows]="5" 
+        [showCurrentPageReport]="true" 
+        [tableStyle]="{ 'min-width': '50rem'}"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" 
+        [rowsPerPageOptions]="[10, 25, 50]">
+  
+      <!-- <ng-template pTemplate="caption">
+        <div class="align-items-center justify-content-between">
+          <button class="btn btn-sm mb-1 custom-filter-btn" style="color: #6D5BD0;
+          border-color: #6D5BD0;">
+            <i class="pi pi-filter-fill"></i> Filter
+          </button>
+          <span class="p-input-icon-left ms-3">
+            <i class="pi pi-search me-2" style="color: #6D5BD0;"></i>
+            <input type="text" placeholder="Search" class="form-control-sm" style="color: #6D5BD0;
+            border: 1px solid #6D5BD0; border-radius: 5px;" />
+          </span>
+          <button class="btn btn-sm" style="color: #f0eff3;
+          background-color: #6D5BD0; float: right;">
+            SEND REMAINDER
+          </button>
+          <hr>
+        </div>
+      </ng-template> -->
+  
+      <ng-template pTemplate="caption">
+        <div class="flex">
+          <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash"></button>
+          <span class="p-input-icon-left ml-auto">
+            <i class="pi pi-search"></i>
+            <!-- <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" /> -->
+            <input pInputText type="text" placeholder="Search keyword" />
+          </span>
+        </div>
+      </ng-template>
+  
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th pFrozenColumn>
+            action
+          </th>
+          <th *ngFor="let col of columns">
+            {{ col}}
+          </th>
+        </tr>
+      </ng-template>
+  
+      <ng-template pTemplate="body" let-rowData let-rowIdx="rowIndex" let-colData="columns" let-editing="editing">
+        <tr>
+          <td pFrozenColumn style="width:100px;">
+            <div style="position: relative;" class="speeddial-linear-demo">
+              <p-toast></p-toast>
+              <p-speedDial [model]="items" direction="right"></p-speedDial>
+            </div>
+          </td>
+          <td *ngFor="let col of colData; index as colIdx;colIdx+1" [pEditableColumn]="rowData[colIdx]"
+            pEditableColumnField="colIdx">
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="text" [(ngModel)]="rowData[colIdx]" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{ rowData[colIdx]}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-table>
+  </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Answer, BookingRequest } from '../model/answer';
+import { Answer, BookingRequest } from '../model/Booking';
+import { QuestionnaireAnswer } from '../model/QuestionnaireAnswer';
 import { BookingService } from '../services/booking-service.service';
 // import { QuestionnaireAnswer } from './model';
 
@@ -98,19 +99,19 @@ console.log("testing log");
   }
 }
 
-export class QuestionnaireAnswer {
-  answer!: string;
-  questionText!: string;
-  questionCode!: string;
-  questionDataType!: string;
-  possibleAnswers!: string[];
-  parentQuestionCode!: string;
-  isMainMandatory!: boolean;
-  fkEntityCode!: string;
-  isActiveInd!: boolean;
-  columnOrderId!: number;
-  questionCategory!: string;
-  questionVersion!: number;
-  questionType!: string;
+// export class QuestionnaireAnswer {
+//   answer!: string;
+//   questionText!: string;
+//   questionCode!: string;
+//   questionDataType!: string;
+//   possibleAnswers!: string[];
+//   parentQuestionCode!: string;
+//   isMainMandatory!: boolean;
+//   fkEntityCode!: string;
+//   isActiveInd!: boolean;
+//   columnOrderId!: number;
+//   questionCategory!: string;
+//   questionVersion!: number;
+//   questionType!: string;
 
-}
+// }

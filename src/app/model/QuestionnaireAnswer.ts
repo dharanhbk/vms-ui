@@ -1,18 +1,19 @@
-
 export class QuestionnaireAnswer{
-    answer:string;
-    questionText:string;
-    questionCode:string;
-    questionDataType:string;
-    possibleAnswers:string[];
-    parentQuestionCode:string;
-    isMainMandatory:boolean;
-    fkEntityCode:string;
-    isActiveInd:boolean;
-    columnOrderId:number;
-    questionCategory:string;
-    questionVersion:number;
-    questionType:string;
+    questionId!:number;
+    answer!:string;
+    questionText!:string;
+    questionCode!:string;
+    questionDesc!:string;
+    questionDataType!:string;
+    possibleAnswers!:string[];
+    parentQuestionCode!:string;
+    isMainMandatory!:boolean;
+    fkEntityCode!:string;
+    isActiveInd!:boolean;
+    columnOrderId!:number;
+    questionCategory!:string;
+    questionVersion!:number;
+    questionType!:string;
     
 }
 
