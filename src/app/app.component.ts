@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'management-portal-ui';
+  isUserLoggedIn(){
+    if(localStorage.getItem("isUserLoggedIn"))
+      return true;
+    return false;
+  }
 }

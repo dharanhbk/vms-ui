@@ -15,7 +15,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import PrimeNG modules
@@ -112,6 +112,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MessageService } from 'primeng/api';
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 
 @NgModule({
@@ -230,7 +231,11 @@ import { MessageService } from 'primeng/api';
       CommonFormComponent,
       HomeComponent
       // CommonFormsComponent
-    ], providers: [TransactionService,MessageService],
+    ], providers: [TransactionService,MessageService,
+      {
+        provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+      }
+    ],
     bootstrap: [ AppComponent ]
 })
 
