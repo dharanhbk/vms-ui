@@ -14,9 +14,11 @@ export class LoginComponent {
   constructor(private _router:Router,
     private _authService:AuthServiceService){}
   ngOnInit(){
-    this._authService.authorize().subscribe(resp=>{
-      console.log(resp)
-    })
+    // this._authService.authorize().subscribe(resp=>{
+    //   console.log(resp)
+    // })
+    localStorage.removeItem("isUserLoggedIn")
+    setTimeout(()=>this.login(),5000)
   }
   navigateToSIgnUp(){
     this._router.navigate(['sign-up'])
@@ -27,7 +29,12 @@ export class LoginComponent {
       username: 'gokul',
       password: 'test'
     }
-    this._authService.login()
+    // window.location.href="http://localhost:9000/login"
+    this._authService.authorize().subscribe(resp=>{
+      console.log("In resppppppp....")
+    },error=>{
+      window.location.href=error.url
+    })
 
   }
 }
