@@ -7,11 +7,11 @@ import * as CryptoJS from 'crypto-js';
 const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 @Component({
-  selector: 'app-top-menu-bar',
-  templateUrl: './top-menu-bar.component.html',
-  styleUrls: ['./top-menu-bar.component.scss'],
+  selector: 'app-menu-bb',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
-export class TopMenuBarComponent implements OnInit {
+export class MenuBBComponent implements OnInit {
 
   authorize_uri = environment.authorize_uri;
   logout_url = environment.logout_url;
@@ -73,4 +73,3 @@ export class TopMenuBarComponent implements OnInit {
   }
 
 }
-

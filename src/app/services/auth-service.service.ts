@@ -1,19 +1,33 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
-  authUrl:string;
+  tokne_url = environment.token_url;
 
-  constructor(private http: HttpClient) {
-    this.authUrl = " http://localhost:9000"
-   }
+  constructor(private httpClient: HttpClient) { }
 
-   authorize(){
-    console.log("Came to service method")
-    return this.http.get(`${this.authUrl}/oauth2/authorize?code_challenge=Lb_adNlATEOgzh4VMJzrVslng47fodO8oNzKj9_BTNE&client_id=gokul-client&code_challenge_method=S256&response_type=code&redirect_uri=http://localhost:4200/home`)
+  public getToken(code: string, code_verifier: string): Observable<any> {
+    let body = new URLSearchParams();
+    body.set('grant_type', environment.grant_type);
+    body.set('client_id', environment.client_id);
+    body.set('redirect_uri', environment.redirect_uri);
+    body.set('scope', environment.scope);
+    body.set('code_verifier', code_verifier);
+    body.set('code', code);
+    const basic_auth = 'Basic '+ btoa('vms-client:vms-secret');
+    const headers_object = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': '*/*',
+      'Authorization': basic_auth
+    });
+    const httpOptions = { headers: headers_object};
+    return this.httpClient.post<any>(this.tokne_url, body, httpOptions);
   }
+  
 }
