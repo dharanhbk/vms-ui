@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 
 
 
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -112,7 +112,13 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MessageService } from 'primeng/api';
-import { AuthInterceptor } from './interceptor/auth.interceptor';
+// import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { ResourceInterceptor } from './interceptors/resource.interceptor';
+import { AuthorizedComponent } from './components/authorized/authorized.component';
+import { MenuBBComponent } from './components/menu/menu.component';
+import { UserComponent } from './components/user/user.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 @NgModule({
@@ -229,14 +235,21 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
       CommonTableComponent,
       TopMenuBarComponent,
       CommonFormComponent,
-      HomeComponent
+      HomeComponent,
+      HomeComponent,
+    AuthorizedComponent,
+    MenuBBComponent,
+    UserComponent,
+    AdminComponent,
+    LogoutComponent
       // CommonFormsComponent
     ], providers: [TransactionService,MessageService,
-      {
-        provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
-      }
+      {provide: HTTP_INTERCEPTORS, useClass: ResourceInterceptor, multi: true}
     ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [ AppComponent ],
+    schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class AppModule {}
+export class AppModule {
+  
+}

@@ -16,7 +16,7 @@ export class ResourceInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let intReq = request;
     const token = this.tokenService.getAccessToken();
-    if(token != null && request.url.includes('resource')) {
+    if(token != null && (request.url.includes('resource') || request.url.includes('booking'))) {
       intReq = request.clone({headers: request.headers.set('Authorization', 'Bearer ' + token)});
     }
     return next.handle(intReq);
