@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TransactionService } from '../services/transaction-service.service';
+import { TransactionService } from '../../services/transaction-service.service';
 
 declare var Razorpay:any
 @Component({

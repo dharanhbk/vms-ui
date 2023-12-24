@@ -12,9 +12,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
-import { Entity } from '../model/entity';
-import { QuestionnaireAnswer } from '../model/QuestionnaireAnswer';
-import { EntityService } from '../services/entity-service.service';
+import { Entity } from '../../model/entity';
+import { QuestionnaireAnswer } from '../../model/QuestionnaireAnswer';
+import { EntityService } from '../../services/entity-service.service';
 
 @Component({
   selector: 'app-entity',
@@ -84,8 +84,7 @@ export class EntityComponent implements OnInit{
   
     mapBookingData(res: any) {
       this.entity = res;
-      this.products = this.entity.questions;
-      console.log(this.entity);
+      this.products = this.entity.questions.sort((a:any,b:any):any=>b.questionId-a.questionId)
     }
 
 
@@ -97,6 +96,7 @@ export class EntityComponent implements OnInit{
       ques.questionId = idArr.length==0?1:Math.max(...idArr)+1;
       ques.questionDataType='text';
       this.products.push(ques);
+      this.products.sort((a:any,b:any):any=>b.questionId-a.questionId)
       console.log(this.products);
     }
 
