@@ -1,12 +1,12 @@
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { PaymentGatewayComponent } from './reusable/payment-gateway/payment-gateway.component';
 import { CommonTableComponent } from './common/common-table/common-table.component';
-import { TopMenuBarComponent } from './common/top-menu-bar/top-menu-bar.component';
+import { TopMenuBarComponent } from './reusable/top-menu-bar/top-menu-bar.component';
 import { TransactionService } from './services/transaction-service.service';
-import { CommonFormComponent } from './common-form/common-form.component';
-import { HomeComponent } from './home/home.component';
+import { CommonFormComponent } from './reusable/common-form/common-form.component';
+import { HomeComponent } from './vms-components/home/home.component';
 // import { CommonFormsComponent } from './common/common-forms/common-forms.component';
 
 
@@ -113,7 +113,7 @@ import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { MessageService } from 'primeng/api';
 // import { AuthInterceptor } from './interceptor/auth.interceptor';
-import { ResourceInterceptor } from './interceptors/resource.interceptor';
+import { ResourceInterceptor } from './interceptor/resource.interceptor';
 import { AuthorizedComponent } from './components/authorized/authorized.component';
 import { MenuBBComponent } from './components/menu/menu.component';
 import { UserComponent } from './components/user/user.component';

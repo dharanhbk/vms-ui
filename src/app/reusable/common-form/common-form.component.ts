@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Answer, BookingRequest } from '../model/Booking';
-import { QuestionnaireAnswer } from '../model/QuestionnaireAnswer';
-import { BookingService } from '../services/booking-service.service';
+import { Answer, BookingRequest } from '../../model/Booking';
+import { QuestionnaireAnswer } from '../../model/QuestionnaireAnswer';
+import { BookingService } from '../../services/booking-service.service';
 // import { QuestionnaireAnswer } from './model';
 
 @Component({

@@ -3,7 +3,7 @@
 [headers]="pHeaders"
 ><h3>welcome</h3></app-ru-table> -->
 
-<div class="card gap-5">
+<div class="card gap-5 mt-5">
     <div class="flex flex-wrap justify-content-left gap-5">
         <span class="p-float-label">
             <input pInputText type="text" id="name" [(ngModel)]="entity.entityName" pTooltip="Enter entity name?" />
@@ -28,25 +28,30 @@
         <p-toast></p-toast>
         <p-table [value]="products" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="caption">
-                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addQuestion()"></p-button>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-sm btn-dark float-end" (click)="addQuestion()"><em class="pi pi-plus"></em> Add</button>
+                        <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addQuestion()"></p-button> -->
+                    </div>
+                </div>
             </ng-template>
             <ng-template pTemplate="header">
-                <tr>
-                    <th style="width:5%" pFrozenColumn>Id</th>
+                <tr class="text-uppercase text-center">
+                    <th style="width:5%" pFrozenColumn >Id</th>
                     <th style="width:10%">Question Code</th>
                     <th style="width:15%"> Question Text</th>
                     <th style="width:5%"> version</th>
                     <th style="width:15%">Description</th>
                     <th style="width:10%">DataType</th>
                     <th style="width:10%">Order Id</th>
-                    <th style="width:10%">Is Active</th>
+                    <th style="width:10%">Active</th>
                     <th style="width:20%">Possible Answers</th>
                     <th style="width:10%" pFrozenColumn>Action</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
                 <tr [pEditableRow]="product">
-                    <td pFrozenColumn>
+                    <td pFrozenColumn class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 {{product.questionId}}
@@ -56,7 +61,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <input pInputText type="text" [(ngModel)]="product.questionCode" required>
@@ -66,7 +71,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <input pInputText type="text" [(ngModel)]="product.questionText" required>
@@ -76,7 +81,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <input pInputText type="number" [(ngModel)]="product.questionVersion" required>
@@ -86,7 +91,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <input pInputText type="text" [(ngModel)]="product.questionDesc" required>
@@ -96,7 +101,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <p-dropdown [options]="dataTypes" appendTo="body" [(ngModel)]="product.questionDataType"
@@ -108,7 +113,7 @@
                         </p-cellEditor>
                     </td>
 
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <input pInputText type="number" [(ngModel)]="product.columnOrderId" required>
@@ -118,7 +123,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <div class="flex flex-wrap gap-3">
@@ -141,7 +146,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
                                 <span class="p-float-label">
@@ -157,7 +162,7 @@
                             </ng-template>
                         </p-cellEditor>
                     </td>
-                    <td pFrozenColumn>
+                    <td pFrozenColumn class="text-center">
                         <div class="flex align-items-center justify-content-center gap-2">
                             <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
                                 (click)="onRowEditInit(product)" class="p-button-rounded p-button-text"></button>
