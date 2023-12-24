@@ -1,4 +1,4 @@
-import { TokenService } from '../../services/token.service';
+import { TokenService } from '../services/token.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpParams } from '@angular/common/http';

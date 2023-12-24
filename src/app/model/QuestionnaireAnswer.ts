@@ -5,7 +5,7 @@ export class QuestionnaireAnswer{
     questionCode!:string;
     questionDesc!:string;
     questionDataType!:string;
-    possibleAnswers!:string[];
+    possibleAnswers!:string;
     parentQuestionCode!:string;
     isMainMandatory!:boolean;
     fkEntityCode!:string;
