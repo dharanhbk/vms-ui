@@ -46,6 +46,7 @@ export class TopMenuBarComponent implements OnInit {
   }
 
   onLogout(): void {
+    localStorage.removeItem("isLoggedIn")
     location.href = this.logout_url;
   }
 

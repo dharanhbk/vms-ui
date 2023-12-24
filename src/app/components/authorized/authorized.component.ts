@@ -21,9 +21,10 @@ export class AuthorizedComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe( data => {
+      localStorage.setItem("isLoggedIn","true")
       this.code = data['code'];
       const code_verifier = this.tokenService.getVerifier();
-      this.tokenService.deleteVerifier();
+      setTimeout(()=>this.tokenService.deleteVerifier(),1000);
       this.getToken(this.code, code_verifier);
     });
   }
