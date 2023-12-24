@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { RuTableComponent } from '../reusable/ru-table/ru-table.component';
-import { BookingService } from '../services/booking-service.service';
+import { RuTableComponent } from '../../reusable/ru-table/ru-table.component';
+import { BookingService } from '../../services/booking-service.service';
 
 @Component({
   selector: 'app-booking',
