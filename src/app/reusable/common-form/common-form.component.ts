@@ -17,6 +17,7 @@ export class CommonFormComponent implements OnInit {
   data!: QuestionnaireAnswer[];
   loading: boolean = false;
   position: string = 'center';
+  optionsMap=new Map();
 
   constructor(private _bookingService: BookingService,
     private confirmationService: ConfirmationService, 
@@ -30,6 +31,8 @@ export class CommonFormComponent implements OnInit {
     this._bookingService.getQuestionsByEntityCode('1').subscribe({
       next: (res: any) => {
         console.log(res)
+        
+        
         this.mapBookingData(res)
       }, error: (err: any) => {
         console.log(err)
@@ -39,6 +42,13 @@ export class CommonFormComponent implements OnInit {
 
   mapBookingData(res: any) {
     this.data = res['data'];
+    this.data.forEach((element) => {
+      if(element.questionDataType==='dropdown'){
+        let options:any[]=[];
+        element!.possibleAnswers.split("|").forEach((e:any)=>options.push({label:e,value:e}));
+        this.optionsMap.set(element['questionId'],options)
+      }
+    });
     console.log(this.data);
   }
 
@@ -96,6 +106,10 @@ console.log("testing log");
         },
         key: 'positionDialog'
     });
+  }
+  getdropdownOptions(id:any){
+    console.log(this.optionsMap)
+    return this.optionsMap.get(id)
   }
 }
 

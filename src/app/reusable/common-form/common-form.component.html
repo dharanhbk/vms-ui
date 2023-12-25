@@ -7,7 +7,7 @@
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>
             <span class="p-float-label" *ngIf="qs.questionDataType === 'dropdown'">
-                <p-dropdown id="{{qs.questionCode}}" pTooltip="{{qs.questionDataType}}" [options]="qs.possibleAnswers" appendTo="body" [(ngModel)]="qs.answer"
+                <p-dropdown id="{{qs.questionCode}}" pTooltip="{{qs.questionDataType}}" [options]="getdropdownOptions(qs.questionId)" appendTo="body" [(ngModel)]="qs.answer"
                                     [style]="{'width':'100%'}"></p-dropdown>
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>

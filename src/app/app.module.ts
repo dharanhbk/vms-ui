@@ -2,8 +2,7 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaymentGatewayComponent } from './reusable/payment-gateway/payment-gateway.component';
-import { CommonTableComponent } from './common/common-table/common-table.component';
-import { TopMenuBarComponent } from './reusable/top-menu-bar/top-menu-bar.component';
+import { TopMenuBarComponent } from './top-menu-bar/top-menu-bar.component';
 import { TransactionService } from './services/transaction-service.service';
 import { CommonFormComponent } from './reusable/common-form/common-form.component';
 import { HomeComponent } from './vms-components/home/home.component';
@@ -114,11 +113,7 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { MessageService } from 'primeng/api';
 // import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { ResourceInterceptor } from './interceptor/resource.interceptor';
-import { AuthorizedComponent } from './components/authorized/authorized.component';
-import { MenuBBComponent } from './components/menu/menu.component';
-import { UserComponent } from './components/user/user.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { AuthorizedComponent } from './auth/authorized/authorized.component';
 
 
 @NgModule({
@@ -232,16 +227,11 @@ import { LogoutComponent } from './components/logout/logout.component';
     declarations: [
       AppComponent,
       PaymentGatewayComponent,
-      CommonTableComponent,
       TopMenuBarComponent,
       CommonFormComponent,
       HomeComponent,
       HomeComponent,
-    AuthorizedComponent,
-    MenuBBComponent,
-    UserComponent,
-    AdminComponent,
-    LogoutComponent
+    AuthorizedComponent
       // CommonFormsComponent
     ], providers: [TransactionService,MessageService,
       {provide: HTTP_INTERCEPTORS, useClass: ResourceInterceptor, multi: true}
