@@ -1,0 +1,25 @@
+<div class="flex flex-wrap justify-content-left gap-3">
+    <div *ngFor="let card of data">
+        <p-card        
+        [style]="{ width: '480px', height:'200px' }">
+            <ng-template pTemplate="header">
+                <i class="pi pi-car" style="font-size: 2.5rem;margin-top:25px;margin-left: 30px;"></i>
+                 <!-- <img alt="Card" src="https://primefaces.org/cdn/primeng/images/usercard.png" /> -->
+            </ng-template>
+            <div>
+            <h4>{{card.entityName}}</h4>
+            <h6>{{card.entityType}}</h6>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae
+                numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis
+                esse, cupiditate neque
+                quas!
+            </p>
+        </div>
+            <!-- <ng-template pTemplate="footer">
+        <p-button label="Save" icon="pi pi-check"></p-button>
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+    </ng-template> -->
+        </p-card>
+    </div>
+</div>

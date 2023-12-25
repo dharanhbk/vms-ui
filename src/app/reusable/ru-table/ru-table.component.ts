@@ -37,7 +37,7 @@ export class RuTableComponent implements OnInit {
   @Input() tableData!: any[][];
   items!: MenuItem[];
 
-  constructor(private _bookingService: BookingService, private messageService: MessageService) { }
+  constructor( private messageService: MessageService) { }
 
   next() {
     this.first = this.first + this.rows;

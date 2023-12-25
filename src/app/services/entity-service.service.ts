@@ -10,12 +10,14 @@ export class EntityService {
 
   saveEntityUrl:string;
   getEntityUrl:string;
+  getEntityCard:string;
 
   constructor(
     private http: HttpClient
   ) {
     this.saveEntityUrl="http://localhost:8080/booking/v1.0/saveEntityDetails";
     this.getEntityUrl="http://localhost:8080/booking/v1.0/getEntityDetails";
+    this.getEntityCard="http://localhost:8080/booking/v1.0/getAllEntityCards";
    }
 
   saveEntityDetails(entity:Entity){
@@ -25,5 +27,9 @@ export class EntityService {
 
   getEntityDetails(entityCode:string){
     return this.http.get(`${this.getEntityUrl}/${entityCode}`);
+  }
+
+  getAllEntityCards(){
+    return this.http.get(`${this.getEntityCard}`);
   }
 }

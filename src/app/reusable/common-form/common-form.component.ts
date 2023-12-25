@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Answer, BookingRequest } from '../../model/Booking';
+import { Answer, QueAnsRequest } from '../../model/Booking';
 import { QuestionnaireAnswer } from '../../model/QuestionnaireAnswer';
 import { BookingService } from '../../services/booking-service.service';
 // import { QuestionnaireAnswer } from './model';
@@ -13,7 +13,7 @@ import { BookingService } from '../../services/booking-service.service';
 })
 export class CommonFormComponent implements OnInit {
 
-  value!: number;
+  // value!: number;
   data!: QuestionnaireAnswer[];
   loading: boolean = false;
   position: string = 'center';
@@ -54,7 +54,7 @@ export class CommonFormComponent implements OnInit {
 
   submit() {
     console.log("inside submit")
-    let bookingReq = new BookingRequest();
+    let bookingReq = new QueAnsRequest();
     bookingReq.fkEntityCode = this.data[0].fkEntityCode;
     
     this.data.forEach(ans => {

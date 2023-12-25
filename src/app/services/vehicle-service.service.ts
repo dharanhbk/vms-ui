@@ -6,7 +6,7 @@ import { QueAnsRequest } from '../model/Booking';
 @Injectable({
   providedIn: 'root'
 })
-export class BookingService {
+export class VehicleService {
 
   getBookingDetailsUrl:string;
   getQuestions:string;
@@ -16,25 +16,25 @@ export class BookingService {
   constructor(
     private http: HttpClient
   ) {
-    this.getBookingDetailsUrl="http://localhost:8080/booking/v1.0/getBookingDetailsByEntityCode";
+    this.getBookingDetailsUrl="http://localhost:8080/booking/v1.0/getVehicleDetailsByEntityCode";
     this.getQuestions="http://localhost:8080/booking/v1.0/getQuestionsByEntityCode";
     this.getAllEntity="http://localhost:8080/booking/v1.0/getAllEntityList";
-    this.saveBooking="http://localhost:8080/booking/v1.0/saveBookingDetails";
+    this.saveBooking="http://localhost:8080/booking/v1.0/saveVehicleDetails";
    }
 
-  getBookingDetailsByEntityCode(entityCode:string){
+  getVehicleDetailsByEntityCode(entityCode:string){
     return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}`)
   }
 
   getQuestionsByEntityCode(entityCode:string){
-    return this.http.get(`${this.getQuestions}/${entityCode}?questionCategory=BOOKING`)
+    return this.http.get(`${this.getQuestions}/${entityCode}?questionCategory=VEHICLE`)
   }
 
   getAllEntityList(){
     return this.http.get(`${this.getAllEntity}`)
   }
 
-  saveBookingDetails(bookingReq:QueAnsRequest){
+  saveVehcileDetails(bookingReq:QueAnsRequest){
     return this.http.post(`${this.saveBooking}`,bookingReq);
   }
 }

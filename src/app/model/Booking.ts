@@ -9,9 +9,9 @@ export class Answer {
   
   }
 
-export class BookingRequest{
+export class QueAnsRequest{
 
   fkEntityCode!:string;
-	bookingId!:number;
+	id!:number;
 	quesAnswers:Answer[]=new Array();
 }
