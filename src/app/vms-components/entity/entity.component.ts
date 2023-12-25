@@ -15,6 +15,7 @@ import { ToastModule } from 'primeng/toast';
 import { Entity } from '../../model/entity';
 import { QuestionnaireAnswer } from '../../model/QuestionnaireAnswer';
 import { EntityService } from '../../services/entity-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-entity',
@@ -44,11 +45,21 @@ export class EntityComponent implements OnInit{
   dataTypes!: SelectItem[];
 
     clonedProducts: { [s: number]: QuestionnaireAnswer } = {};
+  selectedEntity: any;
 
-    constructor(private entityService: EntityService, private messageService: MessageService) {}
+    constructor(private entityService: EntityService, private messageService: MessageService,
+      private activatedRoute: ActivatedRoute) {
+        this.activatedRoute.queryParams.subscribe(params => {
+          this.selectedEntity=params['entityCode']
+          console.log(params['entityCode']);
+        });
+    }
 
     ngOnInit() {
-      this.getEntityDetails();
+      if(this.selectedEntity)
+        this.getEntityDetails();
+      else
+        this.entity.entityCode=this.generateRandomEntityCode();
 
         this.dataTypes = [
             { label: 'Text', value: 'text' },
@@ -60,7 +71,7 @@ export class EntityComponent implements OnInit{
     }
 
     getEntityDetails() {
-      this.entityService.getEntityDetails('1').subscribe({
+      this.entityService.getEntityDetails(this.selectedEntity).subscribe({
         next: (res: any) => {
           console.log(res)
           this.mapBookingData(res)
@@ -72,9 +83,12 @@ export class EntityComponent implements OnInit{
 
     saveEntityDetails() {
       console.log(this.entity);
+      if(!this.selectedEntity)
+        this.entity.questions = [];
       this.entityService.saveEntityDetails(this.entity).subscribe({
         next: (res: any) => {
           console.log(res)
+          this.selectedEntity = res['entityCode']
           this.mapBookingData(res)
         }, error: (err: any) => {
           console.log(err)
@@ -118,5 +132,15 @@ export class EntityComponent implements OnInit{
         this.products[index] = this.clonedProducts[question.questionId as number];
         delete this.clonedProducts[question.questionId as number];
     }
-
+    generateRandomEntityCode(){
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      const charactersLength = characters.length;
+      let counter = 0;
+      while (counter < 5) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+      }
+      return result;
+    }
 }

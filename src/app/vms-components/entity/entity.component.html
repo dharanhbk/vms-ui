@@ -6,13 +6,24 @@
 <div class="card gap-5 mt-5">
     <div class="flex flex-wrap justify-content-left gap-5">
         <span class="p-float-label">
-            <input pInputText type="text" id="name" [(ngModel)]="entity.entityName" pTooltip="Enter entity name?" />
-            <label htmlFor="name">Entity Name</label>
+            <input pInputText type="text" id="name" [(ngModel)]="entity.entityCode" pTooltip="Enter entity id?" disabled />
+            <label htmlFor="name">Entity Id</label>
         </span>
         <span class="p-float-label">
-            <input pInputText type="text" id="type" [(ngModel)]="entity.entityType" pTooltip="Enter entity name?" />
+            <input pInputText type="text" id="type" [(ngModel)]="entity.entityType" pTooltip="Enter entity type?" />
             <label htmlFor="type">Entity Type</label>
         </span>
+        <span class="p-float-label">
+            <input pInputText type="text" id="type" [(ngModel)]="entity.entityDescription" pTooltip="Enter entity owner?" />
+            <label htmlFor="type">Entity Description</label>
+        </span>
+        <span class="p-float-label">
+            <input pInputText type="text" id="type" [(ngModel)]="entity.entityName" pTooltip="Enter entity name?" />
+            <label htmlFor="type">Entity Name</label>
+        </span>
+    </div>
+    <div>
+        <button class="btn btn-success" (click)="saveEntityDetails()">Save</button>
     </div>
 
     <!-- <div>
@@ -26,7 +37,7 @@
 </div> -->
     <div>
         <p-toast></p-toast>
-        <p-table [value]="products" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <p-table *ngIf="selectedEntity" [value]="products" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="caption">
                 <div class="row">
                     <div class="col-12">

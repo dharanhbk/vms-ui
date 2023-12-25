@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PrimeIcons } from 'primeng/api';
 import { CardModule } from 'primeng/card';
 import { Entity } from 'src/app/model/entity';
@@ -17,7 +18,8 @@ export class EntityCardsComponent implements OnInit{
 
   data!:Entity[];
 
-  constructor(private entityService:EntityService){
+  constructor(private entityService:EntityService,
+    private _route: Router){
 
   }
 
@@ -39,7 +41,12 @@ export class EntityCardsComponent implements OnInit{
     this.data = res['data'];
     console.log(this.data);
   }
-
+  routeToAddNewEntity(){
+    this._route.navigate(['/entity'])
+  }
+  routeToEntity(entityCode:any){
+    this._route.navigate(['/entity'],{queryParams:{entityCode}})
+  }
 
 
 }

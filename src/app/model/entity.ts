@@ -6,5 +6,6 @@ export class Entity{
 	entityType!:string;
 	entityOwnerId!:string;
 	cardIcon!:string;
+	entityDescription!:string
 	questions!:QuestionnaireAnswer[];
 }
