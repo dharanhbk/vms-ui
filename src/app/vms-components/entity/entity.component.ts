@@ -101,16 +101,23 @@ export class EntityComponent implements OnInit{
   
     mapBookingData(res: any) {
       this.entity = res;
+      if(this.entity.questions!= undefined){
       this.products = this.entity.questions.sort((a:any,b:any):any=>b.questionId-a.questionId);
       this.bookingProducts=this.products.filter(p => p.questionCategory==='BOOKING');
       this.vehicleProducts=this.products.filter(p => p.questionCategory==='VEHICLE');
       this.driverProducts=this.products.filter(p => p.questionCategory==='DRIVER');
+      }
     }
 
 
     addQuestion(type:string){
-      if(this.products == undefined)
+      if(this.products == undefined){
         this.products = new Array<QuestionnaireAnswer>();
+        this.bookingProducts = new Array<QuestionnaireAnswer>();
+        this.vehicleProducts = new Array<QuestionnaireAnswer>();
+        this.driverProducts = new Array<QuestionnaireAnswer>();
+        this.entity.questions = this.products;
+      }
       var ques = new QuestionnaireAnswer();
       const idArr = this.products.map(p=>p.questionId);
       ques.questionId = idArr.length==0?1:Math.max(...idArr)+1;
@@ -121,14 +128,15 @@ export class EntityComponent implements OnInit{
         this.bookingProducts.push(ques);
         this.bookingProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
       }
-      else if(type='VEHICLE'){
+      else if(type==='VEHICLE'){
         this.vehicleProducts.push(ques);
         this.vehicleProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
       }
-      else if(type='DRIVER'){
+      else if(type==='DRIVER'){
         this.driverProducts.push(ques);
         this.driverProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
       }
+      
       // this.products.sort((a:any,b:any):any=>b.questionId-a.questionId)
       console.log(this.products);
     }

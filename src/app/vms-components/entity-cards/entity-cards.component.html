@@ -1,6 +1,7 @@
-<div class="row d-flex">
-    <div class="col-3" *ngFor="let card of data">
-        <div class="card"style="width: 99%; height:10rem; cursor: pointer; box-shadow: 5px 5px #f7f4f4;" (click)="routeToEntity(card.entityCode)">
+<div class="p-2">
+<div class="flex flex-wrap gap-1">
+    <div  *ngFor="let card of data">
+        <div class="table-card m-2 p-4" style="width: 24rem; height:10rem; cursor: pointer;" (click)="routeToEntity(card.entityCode)">
             <div class="row g-0">
             <!-- <div style=""> -->
                 <em class="pi-info-circle pi float-end text-primary" style="top:1rem; position: absolute; left:
@@ -50,11 +51,12 @@
     </ng-template> -->
         <!-- </p-card> -->
     </div>
-    <div class="col-3">
-        <div class="card" (click)="routeToAddNewEntity()" style="width: 99%; height:10rem; box-shadow: 5px 5px #f7f4f4;cursor: pointer;">
+    <div >
+        <div class="table-card m-2 p-4" (click)="routeToAddNewEntity()" style="width: 24rem; height:10rem; cursor: pointer; background-color: #dadada;">
              <div class="card-body text-center">
-                <em class="pi-plus pi text-primary fs-1 mt-2"></em>
+                <em class="pi-plus pi text-white fs-1 mt-2"></em>
             </div>
          </div>
     </div>
+</div>
 </div>

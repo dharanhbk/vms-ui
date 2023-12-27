@@ -1,4 +1,4 @@
-<div class="card gap-5 mt-5">
+<div class="table-card pt-5 p-3">
     <div class="flex flex-wrap justify-content-left gap-5">
         <span class="p-float-label">
             <input pInputText type="text" id="name" [(ngModel)]="entity.entityCode" pTooltip="Enter entity id?" disabled />
@@ -32,11 +32,12 @@
 </div> -->
     <div>
         <p-toast></p-toast>
-        <h3>Booking Questionnaires</h3>
-        <p-table *ngIf="selectedEntity"  [value]="bookingProducts" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        <p-table *ngIf="selectedEntity"  [value]="bookingProducts" dataKey="questionId" editMode="row" 
+        [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="caption">
                 <div class="row">
                     <div class="col-12">
+                        <h3 class="float-start">Booking Questionnaires</h3>
                         <button class="btn btn-sm btn-dark float-end" (click)="addQuestion('BOOKING')"><em class="pi pi-plus"></em> Add</button>
                         <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addQuestion()"></p-button> -->
                     </div>
@@ -184,11 +185,12 @@
                 </tr>
             </ng-template>
         </p-table>
-        <h3>Vehicle Questionnaires</h3>
-        <p-table [value]="vehicleProducts" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        
+        <p-table *ngIf="selectedEntity" [value]="vehicleProducts" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="caption">
                 <div class="row">
                     <div class="col-12">
+                        <h3 class="float-start">Vehicle Questionnaires</h3>
                         <button class="btn btn-sm btn-dark float-end" (click)="addQuestion('VEHICLE')"><em class="pi pi-plus"></em> Add</button>
                         <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addQuestion()"></p-button> -->
                     </div>
@@ -336,11 +338,12 @@
                 </tr>
             </ng-template>
         </p-table>
-        <h3>Driver Questionnaires</h3>
-        <p-table [value]="driverProducts" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+        
+        <p-table *ngIf="selectedEntity" [value]="driverProducts" dataKey="questionId" editMode="row" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="caption">
                 <div class="row">
                     <div class="col-12">
+                        <h3 class="float-start">Driver Questionnaires</h3>
                         <button class="btn btn-sm btn-dark float-end" (click)="addQuestion('DRIVER')"><em class="pi pi-plus"></em> Add</button>
                         <!-- <p-button type="button" icon="pi pi-plus" styleClass="p-button-text" (click)="addQuestion()"></p-button> -->
                     </div>

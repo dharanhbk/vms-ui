@@ -1,14 +1,16 @@
-<div class="card">
+<div class="table-card m-2 p-3">
     <div class="flex flex-wrap justify-content-left gap-5">
         <span *ngFor="let qs of data">
             <span class="p-float-label" *ngIf="qs.questionDataType === 'text' || qs.questionDataType === 'number'">
-                <input pInputText type="{{qs.questionDataType}}" id="{{qs.questionCode}}" [(ngModel)]="qs.answer" 
+                <input class="decor" pInputText type="{{qs.questionDataType}}" id="{{qs.questionCode}}" [(ngModel)]="qs.answer" 
                 pTooltip="{{qs.questionDataType}}"/>
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>
             <span class="p-float-label" *ngIf="qs.questionDataType === 'dropdown'">
-                <p-dropdown id="{{qs.questionCode}}" pTooltip="{{qs.questionDataType}}" [options]="getdropdownOptions(qs.questionId)" appendTo="body" [(ngModel)]="qs.answer"
-                                    [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown  id="{{qs.questionCode}}" pTooltip="{{qs.questionDataType}}" [options]="getdropdownOptions(qs.questionId)" appendTo="body" [(ngModel)]="qs.answer"
+                                    [style]="{'width':'20rem','border-top':'0px','border-left':'0px','border-right':'0px',
+                                'border-radius':'0px','background-color':'#d9d9d9','border-color': 'black',
+                                'box-shadow': 'inset 0 -1px 0 #ddd'}"></p-dropdown>
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>
             <span class="p-float-label" *ngIf="qs.questionDataType === 'date'">
@@ -17,13 +19,11 @@
             </span>
         </span>
     </div>
-</div>
-<div>
     <div>
         <p-toast></p-toast>
         <p-confirmDialog key="positionDialog" [position]="position"
             rejectButtonStyleClass="p-button-primary"></p-confirmDialog>
         <p-button (click)="confirmPosition('top')" [loading]="loading" label="Sumbit"
-            styleClass="p-button-info"></p-button>
+            styleClass="p-button-secondary m-3"></p-button>
     </div>
 </div>

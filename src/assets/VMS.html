@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://localhost:4200/bookingDetails -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>VMS</title>
+  <!--<base href="/">--><base href=".">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="http://localhost:4200/favicon.ico">
+  <script src="./VMS_files/checkout.js"></script>
+  <link href="./VMS_files/primeflex.css" rel="stylesheet">
+  <link href="./VMS_files/primeicons.css" rel="stylesheet">
+  <link href="./VMS_files/quill.snow.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="https://primefaces.org/cdn/primeng/images/favicon.png">
+  <link href="./VMS_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="./VMS_files/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./VMS_files/styles.css"><style>.cus-clr[_ngcontent-ng-c789586496] {
+  background-color: rgba(219, 219, 219, 0.388);
+  min-height: 780px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksNENBQUE7RUFDQSxpQkFBQTtBQUNKIiwic291cmNlc0NvbnRlbnQiOlsiLmN1cy1jbHJ7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgyMTksIDIxOSwgMjE5LCAwLjM4OCk7XG4gICAgbWluLWhlaWdodDogNzgwcHg7XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>.dropdown-menu[data-bs-popper][_ngcontent-ng-c1991135930] {
+  left: auto !important;
+  background-color: rgba(52, 52, 52, 0.589);
+  color: white;
+}
+
+a[_ngcontent-ng-c1991135930] {
+  color: rgb(221, 220, 220);
+  font-weight: bold;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvdG9wLW1lbnUtYmFyL3RvcC1tZW51LWJhci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHFCQUFBO0VBQ0EseUNBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSx5QkFBQTtFQUNBLGlCQUFBO0FBQ0oiLCJzb3VyY2VzQ29udGVudCI6WyIuZHJvcGRvd24tbWVudVtkYXRhLWJzLXBvcHBlcl17XG4gICAgbGVmdDogYXV0byAhaW1wb3J0YW50O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoNTIsIDUyLCA1MiwgMC41ODkpO1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuYXtcbiAgICBjb2xvcjogcmdiKDIyMSwgMjIwLCAyMjApO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */</style><style>/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */</style><style>.p-datatable .p-datatable-thead > tr > th {
+  color: #131314;
+  font-size: 14px !important;
+  border-bottom: 1px solid #efefef !important;
+  padding: 10px 3px;
+}
+
+  .p-datatable .p-datatable-tbody > tr > td {
+  font-size: 12px !important;
+  border-bottom: 1px solid #efefef !important;
+  padding: 10px 3px;
+}
+
+.table-card[_ngcontent-ng-c2186244289] {
+  box-shadow: 1px 1px 5px 1px #a0a8ab;
+  position: absolute;
+  top: 60px;
+}
+
+.custom-filter-btn[_ngcontent-ng-c2186244289]:hover {
+  color: #ffffff !important;
+  background-color: #6D5BD0 !important;
+}
+
+[_nghost-ng-c2186244289]     .p-progressbar {
+  height: 0.5rem;
+  background-color: #D8DADC;
+}
+[_nghost-ng-c2186244289]     .p-progressbar .p-progressbar-value {
+  background-color: #607D8B;
+}
+
+[_nghost-ng-c2186244289]     .speeddial-linear-demo .p-speeddial-direction-right {
+  left: 0;
+  top: calc(50% - 2rem);
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvcmV1c2FibGUvcnUtdGFibGUvcnUtdGFibGUuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxjQUFBO0VBQ0EsMEJBQUE7RUFDQSwyQ0FBQTtFQUNBLGlCQUFBO0FBQ0o7O0FBQ0E7RUFDSSwwQkFBQTtFQUNBLDJDQUFBO0VBRUEsaUJBQUE7QUFDSjs7QUFDQTtFQUNJLG1DQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0FBRUo7O0FBQUE7RUFDSSx5QkFBQTtFQUNBLG9DQUFBO0FBR0o7O0FBQ0k7RUFDSSxjQUFBO0VBQ0EseUJBQUE7QUFFUjtBQUFRO0VBQ0kseUJBQUE7QUFFWjs7QUFNUTtFQUNJLE9BQUE7RUFDQSxxQkFBQTtBQUhaIiwic291cmNlc0NvbnRlbnQiOlsiOjpuZy1kZWVwIC5wLWRhdGF0YWJsZSAucC1kYXRhdGFibGUtdGhlYWQgPiB0ciA+IHRoe1xuICAgIGNvbG9yOiAjMTMxMzE0O1xuICAgIGZvbnQtc2l6ZTogMTRweCAhaW1wb3J0YW50O1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWZlZmVmICFpbXBvcnRhbnQ7XG4gICAgcGFkZGluZzogMTBweCAzcHg7XG59XG46Om5nLWRlZXAgLnAtZGF0YXRhYmxlIC5wLWRhdGF0YWJsZS10Ym9keSA+IHRyID4gdGR7XG4gICAgZm9udC1zaXplOiAxMnB4ICFpbXBvcnRhbnQ7XG4gICAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICNlZmVmZWYgIWltcG9ydGFudDtcbiAgICAvLyBib3JkZXItbGVmdDogMXB4IHNvbGlkICNlZmVmZWYgIWltcG9ydGFudDtcbiAgICBwYWRkaW5nOiAxMHB4IDNweDtcbn1cbi50YWJsZS1jYXJke1xuICAgIGJveC1zaGFkb3c6IDFweCAxcHggNXB4IDFweCAjYTBhOGFiO1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6NjBweDtcbn1cbi5jdXN0b20tZmlsdGVyLWJ0bjpob3ZlcntcbiAgICBjb2xvcjogI2ZmZmZmZiAhaW1wb3J0YW50O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM2RDVCRDAgIWltcG9ydGFudDtcbn1cblxuOmhvc3QgOjpuZy1kZWVwIHtcbiAgICAucC1wcm9ncmVzc2JhciB7XG4gICAgICAgIGhlaWdodDogLjVyZW07XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNEOERBREM7XG4gICAgXG4gICAgICAgIC5wLXByb2dyZXNzYmFyLXZhbHVlIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICM2MDdEOEI7XG4gICAgICAgIH1cbiAgICB9XG59XG5cbjpob3N0IDo6bmctZGVlcCB7XG4gICAgLnNwZWVkZGlhbC1saW5lYXItZGVtbyB7XG5cbiAgICAgICAgLnAtc3BlZWRkaWFsLWRpcmVjdGlvbi1yaWdodCB7XG4gICAgICAgICAgICBsZWZ0OiAwO1xuICAgICAgICAgICAgdG9wOiBjYWxjKDUwJSAtIDJyZW0pO1xuICAgICAgICB9XG4gICAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style><style>@layer primeng{.p-dialog-mask{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;pointer-events:none}.p-dialog-mask.p-component-overlay{pointer-events:auto}.p-dialog{display:flex;flex-direction:column;pointer-events:auto;max-height:90%;transform:scale(1);position:relative}.p-dialog-content{overflow-y:auto;flex-grow:1}.p-dialog-header{display:flex;align-items:center;justify-content:space-between;flex-shrink:0}.p-dialog-draggable .p-dialog-header{cursor:move}.p-dialog-footer{flex-shrink:0}.p-dialog .p-dialog-header-icons{display:flex;align-items:center}.p-dialog .p-dialog-header-icon{display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.p-fluid .p-dialog-footer .p-button{width:auto}.p-dialog-top .p-dialog,.p-dialog-bottom .p-dialog,.p-dialog-left .p-dialog,.p-dialog-right .p-dialog,.p-dialog-top-left .p-dialog,.p-dialog-top-right .p-dialog,.p-dialog-bottom-left .p-dialog,.p-dialog-bottom-right .p-dialog{margin:.75rem;transform:translateZ(0)}.p-dialog-maximized{transition:none;transform:none;width:100vw!important;height:100vh!important;top:0!important;left:0!important;max-height:100%;height:100%}.p-dialog-maximized .p-dialog-content{flex-grow:1}.p-dialog-left{justify-content:flex-start}.p-dialog-right{justify-content:flex-end}.p-dialog-top{align-items:flex-start}.p-dialog-top-left{justify-content:flex-start;align-items:flex-start}.p-dialog-top-right{justify-content:flex-end;align-items:flex-start}.p-dialog-bottom{align-items:flex-end}.p-dialog-bottom-left{justify-content:flex-start;align-items:flex-end}.p-dialog-bottom-right{justify-content:flex-end;align-items:flex-end}.p-dialog .p-resizable-handle{position:absolute;font-size:.1px;display:block;cursor:se-resize;width:12px;height:12px;right:1px;bottom:1px}.p-confirm-dialog .p-dialog-content{display:flex;align-items:center}}
+</style><style>@layer primeng{.p-datatable{position:relative}.p-datatable>.p-datatable-wrapper{overflow:auto}.p-datatable-table{border-spacing:0px;width:100%}.p-datatable .p-sortable-column{cursor:pointer;-webkit-user-select:none;user-select:none}.p-datatable .p-sortable-column .p-column-title,.p-datatable .p-sortable-column .p-sortable-column-icon,.p-datatable .p-sortable-column .p-sortable-column-badge{vertical-align:middle}.p-datatable .p-sortable-column .p-icon-wrapper{display:inline}.p-datatable .p-sortable-column .p-sortable-column-badge{display:inline-flex;align-items:center;justify-content:center}.p-datatable-hoverable-rows .p-selectable-row{cursor:pointer}.p-datatable-scrollable>.p-datatable-wrapper{position:relative}.p-datatable-scrollable-table>.p-datatable-thead{position:sticky;top:0;z-index:2}.p-datatable-scrollable-table>.p-datatable-frozen-tbody{position:sticky;z-index:1}.p-datatable-scrollable-table>.p-datatable-tfoot{position:sticky;bottom:0;z-index:1}.p-datatable-scrollable .p-frozen-column{position:sticky;background:inherit;z-index:1}.p-datatable-scrollable th.p-frozen-column{z-index:1}.p-datatable-flex-scrollable{display:flex;flex-direction:column;height:100%}.p-datatable-flex-scrollable>.p-datatable-wrapper{display:flex;flex-direction:column;flex:1;height:100%}.p-datatable-scrollable-table>.p-datatable-tbody>.p-rowgroup-header{position:sticky;z-index:2}.p-datatable-resizable-table>.p-datatable-thead>tr>th,.p-datatable-resizable-table>.p-datatable-tfoot>tr>td,.p-datatable-resizable-table>.p-datatable-tbody>tr>td{overflow:hidden;white-space:nowrap}.p-datatable-resizable-table>.p-datatable-thead>tr>th.p-resizable-column:not(.p-frozen-column){background-clip:padding-box;position:relative}.p-datatable-resizable-table-fit>.p-datatable-thead>tr>th.p-resizable-column:last-child .p-column-resizer{display:none}.p-datatable .p-column-resizer{display:block;position:absolute!important;top:0;right:0;margin:0;width:.5rem;height:100%;padding:0;cursor:col-resize;border:1px solid transparent}.p-datatable .p-column-resizer-helper{width:1px;position:absolute;z-index:10;display:none}.p-datatable .p-row-editor-init,.p-datatable .p-row-editor-save,.p-datatable .p-row-editor-cancel,.p-datatable .p-row-toggler{display:inline-flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.p-datatable-reorder-indicator-up,.p-datatable-reorder-indicator-down{position:absolute}.p-datatable-reorderablerow-handle,[pReorderableColumn]{cursor:move}.p-datatable .p-datatable-loading-overlay{position:absolute;display:flex;align-items:center;justify-content:center;z-index:3}.p-column-filter-row{display:flex;align-items:center;width:100%}.p-column-filter-menu{display:inline-flex}.p-column-filter-row p-columnfilterformelement{flex:1 1 auto;width:1%}.p-column-filter-menu-button,.p-column-filter-clear-button{display:inline-flex;justify-content:center;align-items:center;cursor:pointer;text-decoration:none;overflow:hidden;position:relative}.p-column-filter-overlay{position:absolute;top:0;left:0}.p-column-filter-row-items{margin:0;padding:0;list-style:none}.p-column-filter-row-item{cursor:pointer}.p-column-filter-add-button,.p-column-filter-remove-button{justify-content:center}.p-column-filter-add-button .p-button-label,.p-column-filter-remove-button .p-button-label{flex-grow:0}.p-column-filter-buttonbar{display:flex;align-items:center;justify-content:space-between}.p-column-filter-buttonbar .p-button{width:auto}.p-datatable-tbody>tr>td>.p-column-title{display:none}.p-datatable-scroller-spacer{display:flex}.p-datatable .p-scroller .p-scroller-loading{transform:none!important;min-height:0;position:sticky;top:0;left:0}}
+</style><style>@layer primeng{.p-paginator{display:flex;align-items:center;justify-content:center;flex-wrap:wrap}.p-paginator-left-content{margin-right:auto}.p-paginator-right-content{margin-left:auto}.p-paginator-page,.p-paginator-next,.p-paginator-last,.p-paginator-first,.p-paginator-prev,.p-paginator-current{cursor:pointer;display:inline-flex;align-items:center;justify-content:center;line-height:1;-webkit-user-select:none;user-select:none;overflow:hidden;position:relative}.p-paginator-element:focus{z-index:1;position:relative}}
+</style><style>@layer primeng{.p-toast{position:fixed;width:25rem}.p-toast-message{overflow:hidden}.p-toast-message-content{display:flex;align-items:flex-start}.p-toast-message-text{flex:1 1 auto}.p-toast-top-right{top:20px;right:20px}.p-toast-top-left{top:20px;left:20px}.p-toast-bottom-left{bottom:20px;left:20px}.p-toast-bottom-right{bottom:20px;right:20px}.p-toast-top-center{top:20px;left:50%;transform:translate(-50%)}.p-toast-bottom-center{bottom:20px;left:50%;transform:translate(-50%)}.p-toast-center{left:50%;top:50%;min-width:20vw;transform:translate(-50%,-50%)}.p-toast-icon-close{display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;flex:none}.p-toast-icon-close.p-link{cursor:pointer}}
+</style><style>@layer primeng{.p-speeddial{position:absolute;display:flex;z-index:1}.p-speeddial-list{margin:0;padding:0;list-style:none;display:flex;align-items:center;justify-content:center;transition:top 0s linear .2s;pointer-events:none}.p-speeddial-item{transform:scale(0);opacity:0;transition:transform .2s cubic-bezier(.4,0,.2,1) 0ms,opacity .8s;will-change:transform}.p-speeddial-action{display:flex;align-items:center;justify-content:center;border-radius:50%;position:relative;overflow:hidden;cursor:pointer}.p-speeddial-circle .p-speeddial-item,.p-speeddial-semi-circle .p-speeddial-item,.p-speeddial-quarter-circle .p-speeddial-item{position:absolute}.p-speeddial-rotate{transition:transform .25s cubic-bezier(.4,0,.2,1) 0ms;will-change:transform}.p-speeddial-mask{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;transition:opacity .25s cubic-bezier(.25,.8,.25,1)}.p-speeddial-mask-visible{pointer-events:none;opacity:1;transition:opacity .4s cubic-bezier(.25,.8,.25,1)}.p-speeddial-opened .p-speeddial-list{pointer-events:auto}.p-speeddial-opened .p-speeddial-item{transform:scale(1);opacity:1}.p-speeddial-opened .p-speeddial-rotate{transform:rotate(45deg)}.p-speeddial-direction-up{align-items:center;flex-direction:column-reverse}.p-speeddial-direction-up .p-speeddial-list{flex-direction:column-reverse}.p-speeddial-direction-down{align-items:center;flex-direction:column}.p-speeddial-direction-down .p-speeddial-list{flex-direction:column}.p-speeddial-direction-left{justify-content:center;flex-direction:row-reverse}.p-speeddial-direction-left .p-speeddial-list{flex-direction:row-reverse}.p-speeddial-direction-right{justify-content:center;flex-direction:row}.p-speeddial-direction-right .p-speeddial-list{flex-direction:row}}
+</style><style>@layer primeng{.p-dropdown{display:inline-flex;cursor:pointer;position:relative;-webkit-user-select:none;user-select:none}.p-dropdown-clear-icon{position:absolute;top:50%;margin-top:-.5rem}.p-dropdown-trigger{display:flex;align-items:center;justify-content:center;flex-shrink:0}.p-dropdown-label{display:block;white-space:nowrap;overflow:hidden;flex:1 1 auto;width:1%;text-overflow:ellipsis;cursor:pointer}.p-dropdown-label-empty{overflow:hidden;opacity:0}input.p-dropdown-label{cursor:default}.p-dropdown .p-dropdown-panel{min-width:100%}.p-dropdown-items-wrapper{overflow:auto}.p-dropdown-item{cursor:pointer;font-weight:400;white-space:nowrap;position:relative;overflow:hidden}.p-dropdown-item-group{cursor:auto}.p-dropdown-items{margin:0;padding:0;list-style-type:none}.p-dropdown-filter{width:100%}.p-dropdown-filter-container{position:relative}.p-dropdown-filter-icon{position:absolute;top:50%;margin-top:-.5rem}.p-fluid .p-dropdown{display:flex}.p-fluid .p-dropdown .p-dropdown-label{width:1%}}
+</style><style>@layer primeng{.p-overlay{position:absolute;top:0;left:0}.p-overlay-modal{display:flex;align-items:center;justify-content:center;position:fixed;top:0;left:0;width:100%;height:100%}.p-overlay-content{transform-origin:inherit}.p-overlay-modal>.p-overlay-content{z-index:1;width:90%}.p-overlay-top{align-items:flex-start}.p-overlay-top-start{align-items:flex-start;justify-content:flex-start}.p-overlay-top-end{align-items:flex-start;justify-content:flex-end}.p-overlay-bottom{align-items:flex-end}.p-overlay-bottom-start{align-items:flex-end;justify-content:flex-start}.p-overlay-bottom-end{align-items:flex-end;justify-content:flex-end}.p-overlay-left{justify-content:flex-start}.p-overlay-left-start{justify-content:flex-start;align-items:flex-start}.p-overlay-left-end{justify-content:flex-start;align-items:flex-end}.p-overlay-right{justify-content:flex-end}.p-overlay-right-start{justify-content:flex-end;align-items:flex-start}.p-overlay-right-end{justify-content:flex-end;align-items:flex-end}}
+</style></head>
+<body>
+  <app-root _nghost-ng-c789586496="" ng-version="17.0.7"><div _ngcontent-ng-c789586496="" class="row m-0 cus-clr"><div _ngcontent-ng-c789586496="" class="col-12 p-0"><app-top-menu-bar _ngcontent-ng-c789586496="" _nghost-ng-c1991135930=""><nav _ngcontent-ng-c1991135930="" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"><div _ngcontent-ng-c1991135930="" class="container-fluid"><button _ngcontent-ng-c1991135930="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-ng-c1991135930="" class="navbar-toggler-icon"></span></button><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="navbar-brand text-white fs-4 pe-3" style="font-weight: bolder;">VMS</a><div _ngcontent-ng-c1991135930="" id="navbarTogglerDemo03" class="collapse navbar-collapse"><ul _ngcontent-ng-c1991135930="" class="navbar-nav me-auto mb-2 mb-lg-0"><li _ngcontent-ng-c1991135930="" class="nav-item pe-4"><a _ngcontent-ng-c1991135930="" aria-current="page" routerlink="/" class="nav-link" ng-reflect-router-link="/" href="http://localhost:4200/">Home</a></li><li _ngcontent-ng-c1991135930="" class="nav-item pe-4 dropdown"><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle"> Entity </a><ul _ngcontent-ng-c1991135930="" aria-labelledby="navbarDarkDropdownMenuLink" class="dropdown-menu dropdown-menu-light"><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/entityCards" class="dropdown-item">Dashboard</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="dropdown-item">Archieved</a></li></ul></li><li _ngcontent-ng-c1991135930="" class="nav-item pe-4 dropdown"><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle"> Vehicle </a><ul _ngcontent-ng-c1991135930="" aria-labelledby="navbarDarkDropdownMenuLink" class="dropdown-menu dropdown-menu-light"><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/vehicleDetails" class="dropdown-item">Vehicle Details</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/vehicleForm" class="dropdown-item">Register Vehicle</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="dropdown-item">Vehicle Documents</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="dropdown-item">Service History</a></li></ul></li><li _ngcontent-ng-c1991135930="" class="nav-item pe-4 dropdown"><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle"> Booking </a><ul _ngcontent-ng-c1991135930="" aria-labelledby="navbarDarkDropdownMenuLink" class="dropdown-menu dropdown-menu-light"><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" routerlink="/bookingDetails" class="dropdown-item" ng-reflect-router-link="/bookingDetails" href="http://localhost:4200/bookingDetails">Booking Details</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" routerlink="/bookingForm" class="dropdown-item" ng-reflect-router-link="/bookingForm" href="http://localhost:4200/bookingForm">Book Vehicle</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" routerlink="/vehicleAvailability" class="dropdown-item" ng-reflect-router-link="/vehicleAvailability" href="http://localhost:4200/vehicleAvailability">Vehicle Avalability</a></li></ul></li><li _ngcontent-ng-c1991135930="" class="nav-item pe-4 dropdown"><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle"> Employees </a><ul _ngcontent-ng-c1991135930="" aria-labelledby="navbarDarkDropdownMenuLink" class="dropdown-menu dropdown-menu-light"><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/driverDetails" class="dropdown-item">Driver Details</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/driverForm" class="dropdown-item">Register Driver</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="dropdown-item">Others</a></li></ul></li></ul><form _ngcontent-ng-c1991135930="" novalidate="" role="search" class="d-flex ng-untouched ng-pristine ng-valid"><ul _ngcontent-ng-c1991135930="" class="navbar-nav me-auto mb-2 mb-lg-0"><li _ngcontent-ng-c1991135930="" class="nav-item dropdown"><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle"><em _ngcontent-ng-c1991135930="" class="pi pi-user"></em></a><ul _ngcontent-ng-c1991135930="" id="profile" aria-labelledby="navbarDarkDropdownMenuLink" class="dropdown-menu dropdown-menu-light" style="right: 4px !important;"><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" href="http://localhost:4200/#" class="dropdown-item">Account Settings</a></li><li _ngcontent-ng-c1991135930=""><a _ngcontent-ng-c1991135930="" class="dropdown-item">Logout</a></li></ul></li></ul></form></div></div></nav></app-top-menu-bar></div><div _ngcontent-ng-c789586496="" offset="0" class="col-12 p-0 mt-7"><router-outlet _ngcontent-ng-c789586496=""></router-outlet><app-booking _nghost-ng-c2789873759="" class="ng-star-inserted"><app-ru-table _ngcontent-ng-c2789873759="" _nghost-ng-c2186244289="" ng-reflect-flag="true" ng-reflect-table-data="51,Gokul krishnan,pakistan,,bu" ng-reflect-headers="Booking Id,Customer Name,Mobil"><div _ngcontent-ng-c2186244289="" class="table-card m-2 p-3"><p-table _ngcontent-ng-c2186244289="" scrollheight="500px" datakey="id" currentpagereporttemplate="Showing {first} to {last} of {totalRecords} entries" class="p-element ng-star-inserted" ng-reflect-scroll-height="500px" ng-reflect-data-key="id" ng-reflect-current-page-report-template="Showing {first} to {last} of {" ng-reflect-columns="Booking Id,Customer Name,Mobil" ng-reflect-value="51,Gokul krishnan,pakistan,,bu" ng-reflect-scrollable="true" ng-reflect-paginator="true" ng-reflect-rows="5" ng-reflect-show-current-page-report="true" ng-reflect-table-style="[object Object]" ng-reflect-rows-per-page-options="10,25,50"><div ng-reflect-ng-class="[object Object]" id="pn_id_2" class="p-datatable p-component p-datatable-scrollable"><!--bindings={}--><div class="p-datatable-header ng-star-inserted"><div _ngcontent-ng-c2186244289="" class="flex ng-star-inserted"><button _ngcontent-ng-c2186244289="" pbutton="" label="Clear" icon="pi pi-filter-slash" class="p-element p-button-outlined p-button p-component" ng-reflect-label="Clear" ng-reflect-icon="pi pi-filter-slash"><span class="p-button-icon p-button-icon-left pi pi-filter-slash" aria-hidden="true"></span><span class="p-button-label">Clear</span></button><span _ngcontent-ng-c2186244289="" class="p-input-icon-left ml-auto"><i _ngcontent-ng-c2186244289="" class="pi pi-search"></i><input _ngcontent-ng-c2186244289="" pinputtext="" type="text" placeholder="Search keyword" class="p-inputtext p-component p-element"></span></div><!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--></div><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><div class="p-datatable-wrapper" ng-reflect-ng-style="[object Object]" style="max-height: 500px;"><!--bindings={}--><table role="table" ng-reflect-ng-class="[object Object]" id="pn_id_2-table" class="p-datatable-table p-datatable-scrollable-table ng-star-inserted" style="min-width: 50rem;"><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><thead role="rowgroup" class="p-datatable-thead"><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><th _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="left: 0px;"> action </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Booking Id </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Customer Name </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Mobile </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Email </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Vehicle Type </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Vehicle Number </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Booking Id </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Package-io </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Total Amount </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Advance Paid </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Balance Amount </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Address </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> Status </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> tets </th><th _ngcontent-ng-c2186244289="" class="ng-star-inserted"> test1 </th><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--></thead><!--bindings={}--><tbody role="rowgroup" class="p-element p-datatable-tbody" ng-reflect-value="51,Gokul krishnan,pakistan,,bu" ng-reflect-columns="Booking Id,Customer Name,Mobil" ng-reflect-template="[object Object]" ng-reflect-scroller-options="[object Object]"><!--bindings={}--><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><td _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="width: 100px; left: 0px;"><div _ngcontent-ng-c2186244289="" class="speeddial-linear-demo" style="position: relative;"><p-toast _ngcontent-ng-c2186244289="" class="p-element ng-tns-c3409120995-1 ng-star-inserted"><div class="p-toast p-component ng-tns-c3409120995-1 p-toast-top-right" ng-reflect-ng-class="p-toast-top-right"><!--bindings={}--></div></p-toast><p-speeddial _ngcontent-ng-c2186244289="" direction="right" class="p-element" ng-reflect-direction="right" ng-reflect-model="[object Object],[object Object"><div ng-reflect-ng-class="[object Object]" data-pc-name="speeddial" data-pc-section="root" class="p-speeddial p-component p-speeddial-linear p-speeddial-direction-right"><button pripple="" pbutton="" class="p-element p-ripple p-button-icon-only p-speeddial-button p-button-rounded p-speeddial-rotate undefined p-button p-component" ng-reflect-ng-class="[object Object]" aria-expanded="false" aria-haspopup="true" aria-controls="pn_id_4_list" data-pc-name="button"><plusicon class="p-element p-icon-wrapper ng-star-inserted"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_10)"><path d="M7.67742 6.32258V0.677419C7.67742 0.497757 7.60605 0.325452 7.47901 0.198411C7.35197 0.0713707 7.17966 0 7 0C6.82034 0 6.64803 0.0713707 6.52099 0.198411C6.39395 0.325452 6.32258 0.497757 6.32258 0.677419V6.32258H0.677419C0.497757 6.32258 0.325452 6.39395 0.198411 6.52099C0.0713707 6.64803 0 6.82034 0 7C0 7.17966 0.0713707 7.35197 0.198411 7.47901C0.325452 7.60605 0.497757 7.67742 0.677419 7.67742H6.32258V13.3226C6.32492 13.5015 6.39704 13.6725 6.52358 13.799C6.65012 13.9255 6.82106 13.9977 7 14C7.17966 14 7.35197 13.9286 7.47901 13.8016C7.60605 13.6745 7.67742 13.5022 7.67742 13.3226V7.67742H13.3226C13.5022 7.67742 13.6745 7.60605 13.8016 7.47901C13.9286 7.35197 14 7.17966 14 7C13.9977 6.82106 13.9255 6.65012 13.799 6.52358C13.6725 6.39704 13.5015 6.32492 13.3226 6.32258H7.67742Z" fill="currentColor"></path></g><defs><clippath id="url(#pn_id_10)"><rect width="14" height="14" fill="white"></rect></clippath></defs></svg></plusicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><ul role="menu" class="p-speeddial-list" id="pn_id_4_list" tabindex="-1" data-pc-section="menu"><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_4_0" aria-controls="pn_id_4_item" data-pc-section="menuitem" style="transition-delay: 120ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_4_1" aria-controls="pn_id_4_item" data-pc-section="menuitem" style="transition-delay: 90ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_4_2" aria-controls="pn_id_4_item" data-pc-section="menuitem" style="transition-delay: 60ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_4_3" aria-controls="pn_id_4_item" data-pc-section="menuitem" style="transition-delay: 30ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_4_4" aria-controls="pn_id_4_item" data-pc-section="menuitem" style="transition-delay: 0ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-speeddial></div></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="51"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 51 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Gokul krishnan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Gokul krishnan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="pakistan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> pakistan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="bus"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> bus <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="tn33ab2345"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> tn33ab2345 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="CMP"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> CMP <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="pakistry"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> pakistry <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={}--><!--bindings={}--><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><td _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="width: 100px; left: 0px;"><div _ngcontent-ng-c2186244289="" class="speeddial-linear-demo" style="position: relative;"><p-toast _ngcontent-ng-c2186244289="" class="p-element ng-tns-c3409120995-2 ng-star-inserted"><div class="p-toast p-component ng-tns-c3409120995-2 p-toast-top-right" ng-reflect-ng-class="p-toast-top-right"><!--bindings={}--></div></p-toast><p-speeddial _ngcontent-ng-c2186244289="" direction="right" class="p-element" ng-reflect-direction="right" ng-reflect-model="[object Object],[object Object"><div ng-reflect-ng-class="[object Object]" data-pc-name="speeddial" data-pc-section="root" class="p-speeddial p-component p-speeddial-linear p-speeddial-direction-right"><button pripple="" pbutton="" class="p-element p-ripple p-button-icon-only p-speeddial-button p-button-rounded p-speeddial-rotate undefined p-button p-component" ng-reflect-ng-class="[object Object]" aria-expanded="false" aria-haspopup="true" aria-controls="pn_id_12_list" data-pc-name="button"><plusicon class="p-element p-icon-wrapper ng-star-inserted"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_18)"><path d="M7.67742 6.32258V0.677419C7.67742 0.497757 7.60605 0.325452 7.47901 0.198411C7.35197 0.0713707 7.17966 0 7 0C6.82034 0 6.64803 0.0713707 6.52099 0.198411C6.39395 0.325452 6.32258 0.497757 6.32258 0.677419V6.32258H0.677419C0.497757 6.32258 0.325452 6.39395 0.198411 6.52099C0.0713707 6.64803 0 6.82034 0 7C0 7.17966 0.0713707 7.35197 0.198411 7.47901C0.325452 7.60605 0.497757 7.67742 0.677419 7.67742H6.32258V13.3226C6.32492 13.5015 6.39704 13.6725 6.52358 13.799C6.65012 13.9255 6.82106 13.9977 7 14C7.17966 14 7.35197 13.9286 7.47901 13.8016C7.60605 13.6745 7.67742 13.5022 7.67742 13.3226V7.67742H13.3226C13.5022 7.67742 13.6745 7.60605 13.8016 7.47901C13.9286 7.35197 14 7.17966 14 7C13.9977 6.82106 13.9255 6.65012 13.799 6.52358C13.6725 6.39704 13.5015 6.32492 13.3226 6.32258H7.67742Z" fill="currentColor"></path></g><defs><clippath id="url(#pn_id_18)"><rect width="14" height="14" fill="white"></rect></clippath></defs></svg></plusicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><ul role="menu" class="p-speeddial-list" id="pn_id_12_list" tabindex="-1" data-pc-section="menu"><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_12_0" aria-controls="pn_id_12_item" data-pc-section="menuitem" style="transition-delay: 120ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_12_1" aria-controls="pn_id_12_item" data-pc-section="menuitem" style="transition-delay: 90ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_12_2" aria-controls="pn_id_12_item" data-pc-section="menuitem" style="transition-delay: 60ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_12_3" aria-controls="pn_id_12_item" data-pc-section="menuitem" style="transition-delay: 30ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_12_4" aria-controls="pn_id_12_item" data-pc-section="menuitem" style="transition-delay: 0ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-speeddial></div></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="41"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 41 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Gokul krishnan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Gokul krishnan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="india"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> india <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="bus"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> bus <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="tn33ab2345"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> tn33ab2345 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Plot no 18, rose 2nd cross, na"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Plot no 18, rose 2nd cross, nallurahalli, whitefield <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="CMP"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> CMP <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={}--><!--bindings={}--><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><td _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="width: 100px; left: 0px;"><div _ngcontent-ng-c2186244289="" class="speeddial-linear-demo" style="position: relative;"><p-toast _ngcontent-ng-c2186244289="" class="p-element ng-tns-c3409120995-3 ng-star-inserted"><div class="p-toast p-component ng-tns-c3409120995-3 p-toast-top-right" ng-reflect-ng-class="p-toast-top-right"><!--bindings={}--></div></p-toast><p-speeddial _ngcontent-ng-c2186244289="" direction="right" class="p-element" ng-reflect-direction="right" ng-reflect-model="[object Object],[object Object"><div ng-reflect-ng-class="[object Object]" data-pc-name="speeddial" data-pc-section="root" class="p-speeddial p-component p-speeddial-linear p-speeddial-direction-right"><button pripple="" pbutton="" class="p-element p-ripple p-button-icon-only p-speeddial-button p-button-rounded p-speeddial-rotate undefined p-button p-component" ng-reflect-ng-class="[object Object]" aria-expanded="false" aria-haspopup="true" aria-controls="pn_id_20_list" data-pc-name="button"><plusicon class="p-element p-icon-wrapper ng-star-inserted"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_26)"><path d="M7.67742 6.32258V0.677419C7.67742 0.497757 7.60605 0.325452 7.47901 0.198411C7.35197 0.0713707 7.17966 0 7 0C6.82034 0 6.64803 0.0713707 6.52099 0.198411C6.39395 0.325452 6.32258 0.497757 6.32258 0.677419V6.32258H0.677419C0.497757 6.32258 0.325452 6.39395 0.198411 6.52099C0.0713707 6.64803 0 6.82034 0 7C0 7.17966 0.0713707 7.35197 0.198411 7.47901C0.325452 7.60605 0.497757 7.67742 0.677419 7.67742H6.32258V13.3226C6.32492 13.5015 6.39704 13.6725 6.52358 13.799C6.65012 13.9255 6.82106 13.9977 7 14C7.17966 14 7.35197 13.9286 7.47901 13.8016C7.60605 13.6745 7.67742 13.5022 7.67742 13.3226V7.67742H13.3226C13.5022 7.67742 13.6745 7.60605 13.8016 7.47901C13.9286 7.35197 14 7.17966 14 7C13.9977 6.82106 13.9255 6.65012 13.799 6.52358C13.6725 6.39704 13.5015 6.32492 13.3226 6.32258H7.67742Z" fill="currentColor"></path></g><defs><clippath id="url(#pn_id_26)"><rect width="14" height="14" fill="white"></rect></clippath></defs></svg></plusicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><ul role="menu" class="p-speeddial-list" id="pn_id_20_list" tabindex="-1" data-pc-section="menu"><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_20_0" aria-controls="pn_id_20_item" data-pc-section="menuitem" style="transition-delay: 120ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_20_1" aria-controls="pn_id_20_item" data-pc-section="menuitem" style="transition-delay: 90ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_20_2" aria-controls="pn_id_20_item" data-pc-section="menuitem" style="transition-delay: 60ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_20_3" aria-controls="pn_id_20_item" data-pc-section="menuitem" style="transition-delay: 30ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_20_4" aria-controls="pn_id_20_item" data-pc-section="menuitem" style="transition-delay: 0ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-speeddial></div></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="40"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 40 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Gokul krishnan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Gokul krishnan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="afghanistan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> afghanistan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="bus"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> bus <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="tn33ab2345"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> tn33ab2345 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Plot no 18, rose 2nd cross, na"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Plot no 18, rose 2nd cross, nallurahalli, whitefield <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="CMP"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> CMP <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={}--><!--bindings={}--><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><td _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="width: 100px; left: 0px;"><div _ngcontent-ng-c2186244289="" class="speeddial-linear-demo" style="position: relative;"><p-toast _ngcontent-ng-c2186244289="" class="p-element ng-tns-c3409120995-4 ng-star-inserted"><div class="p-toast p-component ng-tns-c3409120995-4 p-toast-top-right" ng-reflect-ng-class="p-toast-top-right"><!--bindings={}--></div></p-toast><p-speeddial _ngcontent-ng-c2186244289="" direction="right" class="p-element" ng-reflect-direction="right" ng-reflect-model="[object Object],[object Object"><div ng-reflect-ng-class="[object Object]" data-pc-name="speeddial" data-pc-section="root" class="p-speeddial p-component p-speeddial-linear p-speeddial-direction-right"><button pripple="" pbutton="" class="p-element p-ripple p-button-icon-only p-speeddial-button p-button-rounded p-speeddial-rotate undefined p-button p-component" ng-reflect-ng-class="[object Object]" aria-expanded="false" aria-haspopup="true" aria-controls="pn_id_28_list" data-pc-name="button"><plusicon class="p-element p-icon-wrapper ng-star-inserted"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_34)"><path d="M7.67742 6.32258V0.677419C7.67742 0.497757 7.60605 0.325452 7.47901 0.198411C7.35197 0.0713707 7.17966 0 7 0C6.82034 0 6.64803 0.0713707 6.52099 0.198411C6.39395 0.325452 6.32258 0.497757 6.32258 0.677419V6.32258H0.677419C0.497757 6.32258 0.325452 6.39395 0.198411 6.52099C0.0713707 6.64803 0 6.82034 0 7C0 7.17966 0.0713707 7.35197 0.198411 7.47901C0.325452 7.60605 0.497757 7.67742 0.677419 7.67742H6.32258V13.3226C6.32492 13.5015 6.39704 13.6725 6.52358 13.799C6.65012 13.9255 6.82106 13.9977 7 14C7.17966 14 7.35197 13.9286 7.47901 13.8016C7.60605 13.6745 7.67742 13.5022 7.67742 13.3226V7.67742H13.3226C13.5022 7.67742 13.6745 7.60605 13.8016 7.47901C13.9286 7.35197 14 7.17966 14 7C13.9977 6.82106 13.9255 6.65012 13.799 6.52358C13.6725 6.39704 13.5015 6.32492 13.3226 6.32258H7.67742Z" fill="currentColor"></path></g><defs><clippath id="url(#pn_id_34)"><rect width="14" height="14" fill="white"></rect></clippath></defs></svg></plusicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><ul role="menu" class="p-speeddial-list" id="pn_id_28_list" tabindex="-1" data-pc-section="menu"><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_28_0" aria-controls="pn_id_28_item" data-pc-section="menuitem" style="transition-delay: 120ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_28_1" aria-controls="pn_id_28_item" data-pc-section="menuitem" style="transition-delay: 90ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_28_2" aria-controls="pn_id_28_item" data-pc-section="menuitem" style="transition-delay: 60ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_28_3" aria-controls="pn_id_28_item" data-pc-section="menuitem" style="transition-delay: 30ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_28_4" aria-controls="pn_id_28_item" data-pc-section="menuitem" style="transition-delay: 0ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-speeddial></div></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="39"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 39 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Gokul krishnan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Gokul krishnan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="pakistan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> pakistan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="bus"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> bus <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="tn33ab2345"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> tn33ab2345 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="500"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 500 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Plot no 18, rose 2nd cross, na"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Plot no 18, rose 2nd cross, nallurahalli, whitefield <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="CMP"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> CMP <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={}--><!--bindings={}--><tr _ngcontent-ng-c2186244289="" class="ng-star-inserted"><td _ngcontent-ng-c2186244289="" pfrozencolumn="" class="p-element p-frozen-column" style="width: 100px; left: 0px;"><div _ngcontent-ng-c2186244289="" class="speeddial-linear-demo" style="position: relative;"><p-toast _ngcontent-ng-c2186244289="" class="p-element ng-tns-c3409120995-5 ng-star-inserted"><div class="p-toast p-component ng-tns-c3409120995-5 p-toast-top-right" ng-reflect-ng-class="p-toast-top-right"><!--bindings={}--></div></p-toast><p-speeddial _ngcontent-ng-c2186244289="" direction="right" class="p-element" ng-reflect-direction="right" ng-reflect-model="[object Object],[object Object"><div ng-reflect-ng-class="[object Object]" data-pc-name="speeddial" data-pc-section="root" class="p-speeddial p-component p-speeddial-linear p-speeddial-direction-right"><button pripple="" pbutton="" class="p-element p-ripple p-button-icon-only p-speeddial-button p-button-rounded p-speeddial-rotate undefined p-button p-component" ng-reflect-ng-class="[object Object]" aria-expanded="false" aria-haspopup="true" aria-controls="pn_id_36_list" data-pc-name="button"><plusicon class="p-element p-icon-wrapper ng-star-inserted"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon"><g clip-path="url(#pn_id_42)"><path d="M7.67742 6.32258V0.677419C7.67742 0.497757 7.60605 0.325452 7.47901 0.198411C7.35197 0.0713707 7.17966 0 7 0C6.82034 0 6.64803 0.0713707 6.52099 0.198411C6.39395 0.325452 6.32258 0.497757 6.32258 0.677419V6.32258H0.677419C0.497757 6.32258 0.325452 6.39395 0.198411 6.52099C0.0713707 6.64803 0 6.82034 0 7C0 7.17966 0.0713707 7.35197 0.198411 7.47901C0.325452 7.60605 0.497757 7.67742 0.677419 7.67742H6.32258V13.3226C6.32492 13.5015 6.39704 13.6725 6.52358 13.799C6.65012 13.9255 6.82106 13.9977 7 14C7.17966 14 7.35197 13.9286 7.47901 13.8016C7.60605 13.6745 7.67742 13.5022 7.67742 13.3226V7.67742H13.3226C13.5022 7.67742 13.6745 7.60605 13.8016 7.47901C13.9286 7.35197 14 7.17966 14 7C13.9977 6.82106 13.9255 6.65012 13.799 6.52358C13.6725 6.39704 13.5015 6.32492 13.3226 6.32258H7.67742Z" fill="currentColor"></path></g><defs><clippath id="url(#pn_id_42)"><rect width="14" height="14" fill="white"></rect></clippath></defs></svg></plusicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><ul role="menu" class="p-speeddial-list" id="pn_id_36_list" tabindex="-1" data-pc-section="menu"><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_36_0" aria-controls="pn_id_36_item" data-pc-section="menuitem" style="transition-delay: 120ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_36_1" aria-controls="pn_id_36_item" data-pc-section="menuitem" style="transition-delay: 90ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_36_2" aria-controls="pn_id_36_item" data-pc-section="menuitem" style="transition-delay: 60ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_36_3" aria-controls="pn_id_36_item" data-pc-section="menuitem" style="transition-delay: 30ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><li ptooltip="" role="menuitem" class="p-element p-speeddial-item ng-star-inserted" ng-reflect-content="" ng-reflect-ng-style="[object Object]" ng-reflect-ng-class="[object Object]" id="pn_id_36_4" aria-controls="pn_id_36_item" data-pc-section="menuitem" style="transition-delay: 0ms;"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--container--></li><!--container--><!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--></ul></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-speeddial></div></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="38"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 38 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Gokul krishnan"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Gokul krishnan <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="+918300677386"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> +918300677386 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="75765"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 75765 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="jhdbdjh"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> jhdbdjh <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="sddvh"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> sddvh <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="1000"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> 1000 <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="Plot no 18, rose 2nd cross, na"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> Plot no 18, rose 2nd cross, nallurahalli, whitefield <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx" ng-reflect-data="dbh"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}--> dbh <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><td _ngcontent-ng-c2186244289="" peditablecolumnfield="colIdx" class="p-element p-editable-column ng-star-inserted" ng-reflect-field="colIdx"><p-celleditor _ngcontent-ng-c2186244289="" class="p-element"><!--bindings={
+  "ng-reflect-ng-if": null
+}-->  <!--bindings={
+  "ng-reflect-ng-template-outlet": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-celleditor></td><!--bindings={
+  "ng-reflect-ng-for-of": "Booking Id,Customer Name,Mobil"
+}--></tr><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--bindings={}--><!--bindings={
+  "ng-reflect-ng-for-of": "51,Gokul krishnan,pakistan,,bu"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><!--bindings={}--><!--bindings={}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></tbody><!--bindings={}--><!--bindings={}--></table><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--container--></div><p-paginator styleclass="p-paginator-bottom" class="p-element ng-star-inserted" ng-reflect-rows="5" ng-reflect-first="0" ng-reflect-total-records="10" ng-reflect-page-link-size="5" ng-reflect-always-show="true" ng-reflect-rows-per-page-options="10,25,50" ng-reflect-template-left="[object Object]" ng-reflect-template-right="[object Object]" ng-reflect-dropdown-scroll-height="200px" ng-reflect-current-page-report-template="Showing {first} to {last} of {" ng-reflect-show-first-last-icon="true" ng-reflect-show-current-page-report="true" ng-reflect-show-page-links="true"><div ng-reflect-ng-class="p-paginator p-component" data-pc-section="root" class="p-paginator p-component ng-star-inserted"><div class="p-paginator-left-content ng-star-inserted" data-pc-section="start"><p-button _ngcontent-ng-c2186244289="" type="button" icon="pi pi-plus" styleclass="p-button-text" class="p-element ng-star-inserted" ng-reflect-type="button" ng-reflect-icon="pi pi-plus" ng-reflect-style-class="p-button-text"><button pripple="" class="p-ripple p-element p-button-text p-button p-component p-button-icon-only" ng-reflect-ng-class="[object Object]" type="button" data-pc-name="button" data-pc-section="root"><!--bindings={}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><span ng-reflect-ng-class="[object Object]" data-pc-section="icon" class="pi pi-plus p-button-icon ng-star-inserted"></span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><!--bindings={}--></button></p-button><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--></div><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--><span class="p-paginator-current ng-star-inserted">Showing 1 to 5 of 10 entries</span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><button type="button" pripple="" class="p-ripple p-element p-paginator-first p-paginator-element p-link p-disabled ng-star-inserted" disabled="" ng-reflect-ng-class="[object Object]" aria-label="First Page"><angledoublelefticon class="p-element p-icon-wrapper ng-star-inserted" ng-reflect-style-class="p-paginator-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-paginator-icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.71602 11.164C5.80782 11.2021 5.9063 11.2215 6.00569 11.221C6.20216 11.2301 6.39427 11.1612 6.54025 11.0294C6.68191 10.8875 6.76148 10.6953 6.76148 10.4948C6.76148 10.2943 6.68191 10.1021 6.54025 9.96024L3.51441 6.9344L6.54025 3.90855C6.624 3.76126 6.65587 3.59011 6.63076 3.42254C6.60564 3.25498 6.525 3.10069 6.40175 2.98442C6.2785 2.86815 6.11978 2.79662 5.95104 2.7813C5.78229 2.76598 5.61329 2.80776 5.47112 2.89994L1.97123 6.39983C1.82957 6.54167 1.75 6.73393 1.75 6.9344C1.75 7.13486 1.82957 7.32712 1.97123 7.46896L5.47112 10.9991C5.54096 11.0698 5.62422 11.1259 5.71602 11.164ZM11.0488 10.9689C11.1775 11.1156 11.3585 11.2061 11.5531 11.221C11.7477 11.2061 11.9288 11.1156 12.0574 10.9689C12.1815 10.8302 12.25 10.6506 12.25 10.4645C12.25 10.2785 12.1815 10.0989 12.0574 9.96024L9.03158 6.93439L12.0574 3.90855C12.1248 3.76739 12.1468 3.60881 12.1204 3.45463C12.0939 3.30045 12.0203 3.15826 11.9097 3.04765C11.7991 2.93703 11.6569 2.86343 11.5027 2.83698C11.3486 2.81053 11.19 2.83252 11.0488 2.89994L7.51865 6.36957C7.37699 6.51141 7.29742 6.70367 7.29742 6.90414C7.29742 7.1046 7.37699 7.29686 7.51865 7.4387L11.0488 10.9689Z" fill="currentColor"></path></svg></angledoublelefticon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><button type="button" pripple="" class="p-ripple p-element p-paginator-prev p-paginator-element p-link p-disabled" disabled="" ng-reflect-ng-class="[object Object]" aria-label="Previous Page"><anglelefticon class="p-element p-icon-wrapper ng-star-inserted" ng-reflect-style-class="p-paginator-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-paginator-icon" aria-hidden="true"><path d="M8.75 11.185C8.65146 11.1854 8.55381 11.1662 8.4628 11.1284C8.37179 11.0906 8.28924 11.0351 8.22 10.965L4.72 7.46496C4.57955 7.32433 4.50066 7.13371 4.50066 6.93496C4.50066 6.73621 4.57955 6.54558 4.72 6.40496L8.22 2.93496C8.36095 2.84357 8.52851 2.80215 8.69582 2.81733C8.86312 2.83252 9.02048 2.90344 9.14268 3.01872C9.26487 3.134 9.34483 3.28696 9.36973 3.4531C9.39463 3.61924 9.36303 3.78892 9.28 3.93496L6.28 6.93496L9.28 9.93496C9.42045 10.0756 9.49934 10.2662 9.49934 10.465C9.49934 10.6637 9.42045 10.8543 9.28 10.995C9.13526 11.1257 8.9448 11.1939 8.75 11.185Z" fill="currentColor"></path></svg></anglelefticon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><span class="p-paginator-pages ng-star-inserted"><button type="button" pripple="" class="p-ripple p-element p-paginator-page p-paginator-element p-link p-highlight ng-star-inserted" ng-reflect-ng-class="[object Object]" aria-label="{page}"> 1 </button><button type="button" pripple="" class="p-ripple p-element p-paginator-page p-paginator-element p-link ng-star-inserted" ng-reflect-ng-class="[object Object]" aria-label="{page}"> 2 </button><!--bindings={
+  "ng-reflect-ng-for-of": "1,2"
+}--></span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><button type="button" pripple="" class="p-ripple p-element p-paginator-next p-paginator-element p-link" ng-reflect-ng-class="[object Object]" aria-label="Next Page"><anglerighticon class="p-element p-icon-wrapper ng-star-inserted" ng-reflect-style-class="p-paginator-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-paginator-icon" aria-hidden="true"><path d="M5.25 11.1728C5.14929 11.1694 5.05033 11.1455 4.9592 11.1025C4.86806 11.0595 4.78666 10.9984 4.72 10.9228C4.57955 10.7822 4.50066 10.5916 4.50066 10.3928C4.50066 10.1941 4.57955 10.0035 4.72 9.86283L7.72 6.86283L4.72 3.86283C4.66067 3.71882 4.64765 3.55991 4.68275 3.40816C4.71785 3.25642 4.79932 3.11936 4.91585 3.01602C5.03238 2.91268 5.17819 2.84819 5.33305 2.83149C5.4879 2.81479 5.64411 2.84671 5.78 2.92283L9.28 6.42283C9.42045 6.56346 9.49934 6.75408 9.49934 6.95283C9.49934 7.15158 9.42045 7.34221 9.28 7.48283L5.78 10.9228C5.71333 10.9984 5.63193 11.0595 5.5408 11.1025C5.44966 11.1455 5.35071 11.1694 5.25 11.1728Z" fill="currentColor"></path></svg></anglerighticon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><button type="button" pripple="" class="p-ripple p-element p-paginator-last p-paginator-element p-link ng-star-inserted" ng-reflect-ng-class="[object Object]" aria-label="Last Page"><angledoublerighticon class="p-element p-icon-wrapper ng-star-inserted" ng-reflect-style-class="p-paginator-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-icon p-paginator-icon" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.68757 11.1451C7.7791 11.1831 7.8773 11.2024 7.9764 11.2019C8.07769 11.1985 8.17721 11.1745 8.26886 11.1312C8.36052 11.088 8.44238 11.0265 8.50943 10.9505L12.0294 7.49085C12.1707 7.34942 12.25 7.15771 12.25 6.95782C12.25 6.75794 12.1707 6.56622 12.0294 6.42479L8.50943 2.90479C8.37014 2.82159 8.20774 2.78551 8.04633 2.80192C7.88491 2.81833 7.73309 2.88635 7.6134 2.99588C7.4937 3.10541 7.41252 3.25061 7.38189 3.40994C7.35126 3.56927 7.37282 3.73423 7.44337 3.88033L10.4605 6.89748L7.44337 9.91463C7.30212 10.0561 7.22278 10.2478 7.22278 10.4477C7.22278 10.6475 7.30212 10.8393 7.44337 10.9807C7.51301 11.0512 7.59603 11.1071 7.68757 11.1451ZM1.94207 10.9505C2.07037 11.0968 2.25089 11.1871 2.44493 11.2019C2.63898 11.1871 2.81949 11.0968 2.94779 10.9505L6.46779 7.49085C6.60905 7.34942 6.68839 7.15771 6.68839 6.95782C6.68839 6.75793 6.60905 6.56622 6.46779 6.42479L2.94779 2.90479C2.80704 2.83757 2.6489 2.81563 2.49517 2.84201C2.34143 2.86839 2.19965 2.94178 2.08936 3.05207C1.97906 3.16237 1.90567 3.30415 1.8793 3.45788C1.85292 3.61162 1.87485 3.76975 1.94207 3.9105L4.95922 6.92765L1.94207 9.9448C1.81838 10.0831 1.75 10.2621 1.75 10.4477C1.75 10.6332 1.81838 10.8122 1.94207 10.9505Z" fill="currentColor"></path></svg></angledoublerighticon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></button><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><p-dropdown styleclass="p-paginator-rpp-options" class="p-element p-inputwrapper ng-untouched ng-valid ng-star-inserted p-inputwrapper-filled ng-dirty" ng-reflect-style-class="p-paginator-rpp-options" ng-reflect-options="[object Object],[object Object" ng-reflect-model="5" ng-reflect-disabled="false" ng-reflect-is-disabled="false" ng-reflect-scroll-height="200px" ng-reflect-aria-label="Rows per page"><div ng-reflect-ng-class="[object Object]" class="p-paginator-rpp-options p-dropdown p-component p-inputwrapper p-inputwrapper-filled" id="pn_id_44"><span role="combobox" pautofocus="" class="p-element p-dropdown-label p-inputtext p-dropdown-label-empty ng-star-inserted" ng-reflect-ng-class="[object Object]" ng-reflect-content="" ng-reflect-tooltip-position="right" ng-reflect-position-style="absolute" aria-disabled="false" aria-haspopup="listbox" aria-controls="pn_id_44_list" tabindex="0" aria-label="Rows per page">&nbsp;<!--ng-container--><!--bindings={
+  "ng-reflect-ng-if-else": "[object Object]"
+}--><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--><!--container--></span><!--container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><!--bindings={}--><div role="button" aria-label="dropdown trigger" aria-haspopup="listbox" class="p-dropdown-trigger" data-pc-section="trigger"><!--bindings={}--><chevrondownicon class="p-element p-icon-wrapper ng-star-inserted" ng-reflect-style-class="p-dropdown-trigger-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="p-dropdown-trigger-icon p-icon" aria-hidden="true"><path d="M7.01744 10.398C6.91269 10.3985 6.8089 10.378 6.71215 10.3379C6.61541 10.2977 6.52766 10.2386 6.45405 10.1641L1.13907 4.84913C1.03306 4.69404 0.985221 4.5065 1.00399 4.31958C1.02276 4.13266 1.10693 3.95838 1.24166 3.82747C1.37639 3.69655 1.55301 3.61742 1.74039 3.60402C1.92777 3.59062 2.11386 3.64382 2.26584 3.75424L7.01744 8.47394L11.769 3.75424C11.9189 3.65709 12.097 3.61306 12.2748 3.62921C12.4527 3.64535 12.6199 3.72073 12.7498 3.84328C12.8797 3.96582 12.9647 4.12842 12.9912 4.30502C13.0177 4.48162 12.9841 4.662 12.8958 4.81724L7.58083 10.1322C7.50996 10.2125 7.42344 10.2775 7.32656 10.3232C7.22968 10.3689 7.12449 10.3944 7.01744 10.398Z" fill="currentColor"></path></svg></chevrondownicon><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--></div><p-overlay class="p-element ng-tns-c3177733119-6 ng-star-inserted" ng-reflect-target="@parent"><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></p-overlay></div></p-dropdown><!--bindings={
+  "ng-reflect-ng-if": "10,25,50"
+}--><div class="p-paginator-right-content ng-star-inserted" data-pc-section="end"><p-button _ngcontent-ng-c2186244289="" type="button" icon="pi pi-cloud" styleclass="p-button-text" class="p-element ng-star-inserted" ng-reflect-type="button" ng-reflect-icon="pi pi-cloud" ng-reflect-style-class="p-button-text"><button pripple="" class="p-ripple p-element p-button-text p-button p-component p-button-icon-only" ng-reflect-ng-class="[object Object]" type="button" data-pc-name="button" data-pc-section="root"><!--bindings={}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><span ng-reflect-ng-class="[object Object]" data-pc-section="icon" class="pi pi-cloud p-button-icon ng-star-inserted"></span><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--><!--ng-container--><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><!--bindings={}--></button></p-button><!--bindings={
+  "ng-reflect-ng-template-outlet-context": "[object Object]"
+}--></div><!--bindings={
+  "ng-reflect-ng-if": "[object Object]"
+}--></div><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></p-paginator><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><!--bindings={}--><!--bindings={}--><!--bindings={}--><!--bindings={}--></div></p-table><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--></div><p-dialog _ngcontent-ng-c2186244289="" header="Long Content" class="p-element ng-tns-c131382906-0 ng-star-inserted" ng-reflect-header="Long Content" ng-reflect-visible="false"><!--bindings={}--></p-dialog></app-ru-table></app-booking><!--container--></div></div></app-root>
+<script src="./VMS_files/runtime.js" type="module"></script><script src="./VMS_files/polyfills.js" type="module"></script><script src="./VMS_files/styles.js" defer=""></script><script src="./VMS_files/vendor.js" type="module"></script><script src="./VMS_files/main.js" type="module"></script>
+
+<div class="razorpay-container" style="z-index: 2147483647; position: fixed; top: 0px; display: none; left: 0px; height: 100%; width: 100%; backface-visibility: hidden; overflow-y: visible;"><style>@keyframes rzp-rot{to{transform: rotate(360deg);}}@-webkit-keyframes rzp-rot{to{-webkit-transform: rotate(360deg);}} .razorpay-container > iframe {min-height: 100%!important;}</style><div class="razorpay-backdrop" style="min-height: 100%; transition: all 0.3s ease-out 0s; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><span style="text-decoration: none; background: rgb(214, 68, 68); border: 1px dashed white; padding: 3px; opacity: 0; transform: rotate(45deg); transition: opacity 0.3s ease-in 0s; font-family: lato, ubuntu, helvetica, sans-serif; color: white; position: absolute; width: 200px; text-align: center; right: -50px; top: 50px;">Test Mode</span></div><iframe style="opacity: 1; height: 100%; position: relative; background: none; display: block; border: 0 none transparent; margin: 0px; padding: 0px; z-index: 2;" allowtransparency="true" frameborder="0" width="100%" height="100%" src="./VMS_files/public.html" class="razorpay-checkout-frame" allow="otp-credentials"></iframe></div></body></html>

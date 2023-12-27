@@ -12,6 +12,8 @@
 }
 .table-card{
     box-shadow: 1px 1px 5px 1px #a0a8ab;
+    position: absolute;
+    top:55px;
 }
 .custom-filter-btn:hover{
     color: #ffffff !important;
@@ -38,3 +40,16 @@
         }
     }
 }
+
+:host ::ng-deep .p-speeddial-action-icon::before {
+    // content: '1' !important;
+    color: white !important;
+    font-weight: bold;
+  }
+:host ::ng-deep .p-speeddial-button{
+    // content: '1' !important;
+    border-radius: 50px !important;
+  }
+:host ::ng-deep .p-speeddial{
+position:sticky;
+  }
