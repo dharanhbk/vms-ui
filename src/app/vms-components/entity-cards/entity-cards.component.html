@@ -1,6 +1,25 @@
 <div class="row d-flex">
     <div class="col-3" *ngFor="let card of data">
-        <div class="card"style="width: 99%; height:13rem; cursor: pointer;" (click)="routeToEntity(card.entityCode)">
+        <div class="card"style="width: 99%; height:10rem; cursor: pointer; box-shadow: 5px 5px #f7f4f4;" (click)="routeToEntity(card.entityCode)">
+            <div class="row g-0">
+            <!-- <div style=""> -->
+                <em class="pi-info-circle pi float-end text-primary" style="top:1rem; position: absolute; left:
+                90%;"></em>
+            <!-- </div> -->
+              <div class="col-md-4">
+                <!-- <img src="..." class="img-fluid rounded-start" alt="..."> -->
+                <i class="pi pi-car text-center pt-3" style="font-size: 4rem;"></i>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{card.entityName}}</h5>
+                  <span class="text-secondary">{{card.entityType}}</span>
+                  <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- <div class="card"style="width: 99%; height:13rem; cursor: pointer; box-shadow: 5px 5px #f7f4f4;" (click)="routeToEntity(card.entityCode)">
             <div class="card-body">
                 <div class="col-12 text-center">
                     <i class="pi pi-car text-center" style="font-size: 2.5rem;"></i>
@@ -8,7 +27,7 @@
                 <h5 class="card-title mt-2 p-0">{{card.entityName}}</h5>
                 <div class="text-secondary">{{card.entityType}}</div>
               </div>
-        </div>
+        </div> -->
         <!-- <p-card        
         [style]="{ width: '480px', height:'200px' }">
             <ng-template pTemplate="header"> -->
@@ -32,10 +51,10 @@
         <!-- </p-card> -->
     </div>
     <div class="col-3">
-        <div class="card" style="width: 99%; height:13rem;">
-             <div class="card-body justify-content-center">
-                 <button class="btn btn-outline-primary" (click)="routeToAddNewEntity()"><em class="pi-plus pi"></em> Add new entity</button>
-             </div>
+        <div class="card" (click)="routeToAddNewEntity()" style="width: 99%; height:10rem; box-shadow: 5px 5px #f7f4f4;cursor: pointer;">
+             <div class="card-body text-center">
+                <em class="pi-plus pi text-primary fs-1 mt-2"></em>
+            </div>
          </div>
     </div>
 </div>

@@ -4,9 +4,10 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, tap } from 'rxjs';
 
 @Injectable()
 export class ResourceInterceptor implements HttpInterceptor {
@@ -21,6 +22,14 @@ export class ResourceInterceptor implements HttpInterceptor {
       intReq = request.clone({headers: request.headers.set('Authorization', 'Bearer ' + token)
                     .set('ngrok-skip-browser-warning', 'true')});
     }
-    return next.handle(intReq);
+    return next.handle(intReq).pipe( tap(() => {},
+    (err: any) => {
+    if (err instanceof HttpErrorResponse) {
+      if (err.status !== 401) {
+       return;
+      }
+      alert("Your session expired ! Please login again")
+    }
+  }));
   }
 }

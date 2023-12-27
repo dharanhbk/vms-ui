@@ -1,9 +1,9 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" style="border-bottom: 1px solid #f0f1f3;">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand text-white fs-4" style="font-weight: bolder;" href="#">VMS</a>
+    <a class="navbar-brand text-white fs-4 pe-3" style="font-weight: bolder;" href="#">VMS</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- <li class="nav-item">
@@ -12,19 +12,19 @@
         <!-- <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="/vehicleDetails">Vehicle Details</a>
         </li> -->
-        <li class="nav-item">
+        <li class="nav-item pe-4">
           <a class="nav-link" aria-current="page" routerLink="/">Home</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" aria-current="page" routerLink="/entity">Entity</a>
         </li> -->
-        <li class="nav-item dropdown">
+        <li class="nav-item pe-4 dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Entity
           </a>
           <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
             <li><a class="dropdown-item" href="/entityCards">Dashboard</a></li>
-            <li><a class="dropdown-item" href="/entity">Entity Registration</a></li>
+            <!-- <li><a class="dropdown-item" href="/entity">Entity Registration</a></li> -->
             <li><a class="dropdown-item" href="#">Archieved</a></li>
           </ul>
         </li>
@@ -43,7 +43,7 @@
             <a class="nav-link"  routerLink="/admin" *ngIf="isAdmin">Admin</a>
           </li> -->
 
-          <li class="nav-item dropdown">
+          <li class="nav-item pe-4 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Vehicle
             </a>
@@ -55,7 +55,7 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item pe-4 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Booking
             </a>
@@ -66,7 +66,7 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item pe-4 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Employees
             </a>
