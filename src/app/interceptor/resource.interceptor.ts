@@ -17,7 +17,9 @@ export class ResourceInterceptor implements HttpInterceptor {
     let intReq = request;
     const token = this.tokenService.getAccessToken();
     if(token != null && (request.url.includes('resource') || request.url.includes('booking'))) {
-      intReq = request.clone({headers: request.headers.set('Authorization', 'Bearer ' + token)});
+      // request.headers.set('ngrok-skip-browser-warning', 'true');
+      intReq = request.clone({headers: request.headers.set('Authorization', 'Bearer ' + token)
+                    .set('ngrok-skip-browser-warning', 'true')});
     }
     return next.handle(intReq);
   }

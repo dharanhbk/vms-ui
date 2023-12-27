@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { QueAnsRequest } from 'src/app/model/Booking';
 import { RuTableComponent } from '../../reusable/ru-table/ru-table.component';
 import { BookingService } from '../../services/booking-service.service';
 
@@ -12,6 +13,10 @@ import { BookingService } from '../../services/booking-service.service';
 })
 export class BookingComponent implements OnInit{
 
+  @ViewChild(RuTableComponent) rutableComponent!:RuTableComponent;
+  
+  // pSpeedDial:boolean=false;
+  booking!:QueAnsRequest;
   pTableData!:any[][];
   pHeaders!:any[];
   pFlag:boolean=false;
@@ -19,6 +24,24 @@ export class BookingComponent implements OnInit{
   constructor(private _bookingService: BookingService, private messageService: MessageService) { }
   ngOnInit(){
     this.getBookingDetails();
+  }
+
+  getSpeedDialAction(data:{opt:string,bookingId:number}){
+    if(data.opt === 'EDIT'){
+      this._bookingService.getBookingDetailById(data.bookingId).subscribe({
+        next: (res: any) => {
+          console.log(res)
+          this.mapBookData(res);
+          this.rutableComponent.queAns = this.booking.quesAnswers;
+        }, error: (err: any) => {
+          console.log(err)
+        }
+      });
+    }
+  }
+
+  mapBookData(res:any){
+    this.booking=res['data'];
   }
 
   getBookingDetails() {

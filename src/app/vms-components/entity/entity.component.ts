@@ -37,7 +37,10 @@ import { EntityService } from '../../services/entity-service.service';
 })
 export class EntityComponent implements OnInit{
 
-  products!: QuestionnaireAnswer[];
+  products!:QuestionnaireAnswer[];
+  bookingProducts!: QuestionnaireAnswer[];
+  vehicleProducts!: QuestionnaireAnswer[];
+  driverProducts!: QuestionnaireAnswer[];
 
   entity:Entity=new Entity();
 
@@ -84,19 +87,35 @@ export class EntityComponent implements OnInit{
   
     mapBookingData(res: any) {
       this.entity = res;
-      this.products = this.entity.questions.sort((a:any,b:any):any=>b.questionId-a.questionId)
+      this.products = this.entity.questions.sort((a:any,b:any):any=>b.questionId-a.questionId);
+      this.bookingProducts=this.products.filter(p => p.questionCategory==='BOOKING');
+      this.vehicleProducts=this.products.filter(p => p.questionCategory==='VEHICLE');
+      this.driverProducts=this.products.filter(p => p.questionCategory==='DRIVER');
     }
 
 
-    addQuestion(){
+    addQuestion(type:string){
       if(this.products == undefined)
         this.products = new Array<QuestionnaireAnswer>();
       var ques = new QuestionnaireAnswer();
       const idArr = this.products.map(p=>p.questionId);
       ques.questionId = idArr.length==0?1:Math.max(...idArr)+1;
       ques.questionDataType='text';
+      ques.questionCategory=type;
       this.products.push(ques);
-      this.products.sort((a:any,b:any):any=>b.questionId-a.questionId)
+      if(type==='BOOKING'){
+        this.bookingProducts.push(ques);
+        this.bookingProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
+      }
+      else if(type='VEHICLE'){
+        this.vehicleProducts.push(ques);
+        this.vehicleProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
+      }
+      else if(type='DRIVER'){
+        this.driverProducts.push(ques);
+        this.driverProducts.sort((a:any,b:any):any=>b.questionId-a.questionId)
+      }
+      // this.products.sort((a:any,b:any):any=>b.questionId-a.questionId)
       console.log(this.products);
     }
 
