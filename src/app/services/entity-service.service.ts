@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http';
 import { Entity } from '../model/entity';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class EntityService {
   constructor(
     private http: HttpClient
   ) {
-    this.saveEntityUrl="http://localhost:8080/booking/v1.0/saveEntityDetails";
-    this.getEntityUrl="http://localhost:8080/booking/v1.0/getEntityDetails";
-    this.getEntityCard="http://localhost:8080/booking/v1.0/getAllEntityCards";
+    this.saveEntityUrl=environment.resource_url+"/booking/v1.0/saveEntityDetails";
+    this.getEntityUrl=environment.resource_url+"/booking/v1.0/getEntityDetails";
+    this.getEntityCard=environment.resource_url+"/booking/v1.0/getAllEntityCards";
    }
 
   saveEntityDetails(entity:Entity){

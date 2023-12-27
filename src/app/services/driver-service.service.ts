@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient} from '@angular/common/http'
 import { QueAnsRequest } from '../model/Booking';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,11 @@ export class DriverService {
   constructor(
     private http: HttpClient
   ) {
-    this.getBookingDetailsUrl="http://localhost:8080/booking/v1.0/getDriverDetailsByEntityCode";
-    this.getQuestions="http://localhost:8080/booking/v1.0/getQuestionsByEntityCode";
-    this.getAllEntity="http://localhost:8080/booking/v1.0/getAllEntityList";
-    this.saveBooking="http://localhost:8080/booking/v1.0/saveDriverDetails";
+    this.getBookingDetailsUrl=environment.resource_url+"/booking/v1.0/getDriverDetailsByEntityCode";
+    this.getQuestions=environment.resource_url+"/booking/v1.0/getQuestionsByEntityCode";
+    this.getAllEntity=environment.resource_url+"/booking/v1.0/getAllEntityList";
+    this.saveBooking=environment.resource_url+"/booking/v1.0/saveDriverDetails";
+    
    }
 
   getDriverDetailsByEntityCode(entityCode:string){
