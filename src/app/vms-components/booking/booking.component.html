@@ -1,4 +1,6 @@
 <app-ru-table [tableData]="pTableData"
 [flag]="pFlag"
 [headers]="pHeaders"
+[headerDropdown]="entities"
+(headerDropdownSelected)="headerDropdownSelected($event)"
 (speedDial)="getSpeedDialAction($event)"></app-ru-table>

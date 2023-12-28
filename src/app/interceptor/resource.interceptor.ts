@@ -8,6 +8,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, catchError, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class ResourceInterceptor implements HttpInterceptor {
@@ -29,6 +30,8 @@ export class ResourceInterceptor implements HttpInterceptor {
        return;
       }
       alert("Your session expired ! Please login again")
+      localStorage.removeItem("isLoggedIn")
+      window.location.href=environment.logout_url;
     }
   }));
   }

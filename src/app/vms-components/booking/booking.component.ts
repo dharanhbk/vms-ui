@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import { QueAnsRequest } from 'src/app/model/Booking';
 import { RuTableComponent } from '../../reusable/ru-table/ru-table.component';
 import { BookingService } from '../../services/booking-service.service';
+import { EntityService } from 'src/app/services/entity-service.service';
 
 @Component({
   selector: 'app-booking',
@@ -20,11 +21,32 @@ export class BookingComponent implements OnInit{
   pTableData!:any[][];
   pHeaders!:any[];
   pFlag:boolean=false;
+  entities:any[]=[];
 
-  constructor(private _bookingService: BookingService, private messageService: MessageService) { }
+  constructor(private _bookingService: BookingService, private messageService: MessageService,
+    private entityService:EntityService) { }
   ngOnInit(){
-    this.getBookingDetails();
+    this.getEntities();
   }
+
+  getEntities() {
+    this.entityService.getAllEntityCards().subscribe({
+      next: (res: any) => {
+        console.log(res)
+        this.mapData(res);
+        this.getBookingDetails(res!.data[0]!.entityCode);
+      }, error: (err: any) => {
+        console.log(err)
+      }
+    })
+  }
+  mapData(res: any) {
+    res['data'].forEach((element:any) => {
+      this.entities.push({label:element.entityName, value: element.entityCode})
+    });
+    console.log(this.entities)
+  }
+  
 
   getSpeedDialAction(data:{opt:string,bookingId:number}){
     if(data.opt === 'EDIT'){
@@ -44,8 +66,8 @@ export class BookingComponent implements OnInit{
     this.booking=res['data'];
   }
 
-  getBookingDetails() {
-    this._bookingService.getBookingDetailsByEntityCode('1').subscribe({
+  getBookingDetails(entityCode:string) {
+    this._bookingService.getBookingDetailsByEntityCode(entityCode).subscribe({
       next: (res: any) => {
         console.log(res)
         this.mapBookingData(res)
@@ -53,6 +75,10 @@ export class BookingComponent implements OnInit{
         console.log(err)
       }
     })
+  }
+  headerDropdownSelected(event:any){
+    console.log(event)
+    this.getBookingDetails(event['value'])
   }
 
   mapBookingData(res: any) {

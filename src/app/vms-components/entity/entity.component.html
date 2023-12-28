@@ -134,23 +134,24 @@
                     <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
-                                <div class="flex flex-wrap gap-3">
-                                    <div class="flex align-items-center">
-                                        <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
+                                <div class="flex flex-wrap gap-3 ps-5">
+                                    <div class="flex align-items-center form-check form-switch">
+                                        <!-- <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
                                             inputId="yesId"></p-radioButton>
-                                        <label for="yesId" class="ml-2">Yes</label>
+                                        <label for="yesId" class="ml-2">Yes</label> -->
+                                        <input class="form-check-input fs-3" [(ngModel)]="product.activeInd" type="checkbox" id="flexSwitchCheckDefault">
                                     </div>
 
-                                    <div class="flex align-items-center">
+                                    <!-- <div class="flex align-items-center">
                                         <p-radioButton name="pizza" value=false [(ngModel)]="product.isActiveInd"
                                             inputId="noId"></p-radioButton>
                                         <label for="noId" class="ml-2">No</label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- <input pInputText type="radio" [(ngModel)]="product.isActiveInd" required> -->
                             </ng-template>
                             <ng-template pTemplate="output">
-                                {{product.isActiveInd===true?'Yes':'No'}}
+                                <em [class]="getClass(product.activeInd)"></em>
                             </ng-template>
                         </p-cellEditor>
                     </td>
@@ -287,23 +288,24 @@
                     <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
-                                <div class="flex flex-wrap gap-3">
-                                    <div class="flex align-items-center">
-                                        <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
+                                <div class="flex flex-wrap gap-3 ps-5">
+                                    <div class="flex align-items-center form-check form-switch">
+                                        <!-- <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
                                             inputId="yesId"></p-radioButton>
-                                        <label for="yesId" class="ml-2">Yes</label>
+                                        <label for="yesId" class="ml-2">Yes</label> -->
+                                        <input class="form-check-input fs-3" [(ngModel)]="product.activeInd" type="checkbox" id="flexSwitchCheckDefault">
                                     </div>
 
-                                    <div class="flex align-items-center">
+                                    <!-- <div class="flex align-items-center">
                                         <p-radioButton name="pizza" value=false [(ngModel)]="product.isActiveInd"
                                             inputId="noId"></p-radioButton>
                                         <label for="noId" class="ml-2">No</label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- <input pInputText type="radio" [(ngModel)]="product.isActiveInd" required> -->
                             </ng-template>
                             <ng-template pTemplate="output">
-                                {{product.isActiveInd}}
+                                <em [class]="getClass(product.activeInd)"></em>
                             </ng-template>
                         </p-cellEditor>
                     </td>
@@ -440,23 +442,24 @@
                     <td class="text-center">
                         <p-cellEditor>
                             <ng-template pTemplate="input">
-                                <div class="flex flex-wrap gap-3">
-                                    <div class="flex align-items-center">
-                                        <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
+                                <div class="flex flex-wrap gap-3 ps-5">
+                                    <div class="flex align-items-center form-check form-switch">
+                                        <!-- <p-radioButton name="pizza" value=true [(ngModel)]="product.isActiveInd"
                                             inputId="yesId"></p-radioButton>
-                                        <label for="yesId" class="ml-2">Yes</label>
+                                        <label for="yesId" class="ml-2">Yes</label> -->
+                                        <input class="form-check-input fs-3" [(ngModel)]="product.activeInd" type="checkbox" id="flexSwitchCheckDefault">
                                     </div>
 
-                                    <div class="flex align-items-center">
+                                    <!-- <div class="flex align-items-center">
                                         <p-radioButton name="pizza" value=false [(ngModel)]="product.isActiveInd"
                                             inputId="noId"></p-radioButton>
                                         <label for="noId" class="ml-2">No</label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- <input pInputText type="radio" [(ngModel)]="product.isActiveInd" required> -->
                             </ng-template>
                             <ng-template pTemplate="output">
-                                {{product.isActiveInd}}
+                                <em [class]="getClass(product.activeInd)"></em>
                             </ng-template>
                         </p-cellEditor>
                     </td>

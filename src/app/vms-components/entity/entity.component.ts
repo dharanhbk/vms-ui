@@ -83,6 +83,9 @@ export class EntityComponent implements OnInit{
         }
       })
     }
+    getClass(active:boolean){
+      return active ? "pi pi-check text-success" : "pi pi-times text-danger";
+    }
 
     saveEntityDetails() {
       console.log(this.entity);
@@ -107,6 +110,8 @@ export class EntityComponent implements OnInit{
       this.vehicleProducts=this.products.filter(p => p.questionCategory==='VEHICLE');
       this.driverProducts=this.products.filter(p => p.questionCategory==='DRIVER');
       }
+      console.log(this.products);
+      console.log(this.bookingProducts);
     }
 
 
@@ -139,6 +144,7 @@ export class EntityComponent implements OnInit{
       
       // this.products.sort((a:any,b:any):any=>b.questionId-a.questionId)
       console.log(this.products);
+      console.log(this.bookingProducts);
     }
 
     onRowEditInit(question: QuestionnaireAnswer) {

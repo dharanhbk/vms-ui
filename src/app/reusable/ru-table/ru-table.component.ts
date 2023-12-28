@@ -5,6 +5,7 @@ import { MenuItem, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { SpeedDialModule } from 'primeng/speeddial';
@@ -26,7 +27,8 @@ import { QuestionnaireAnswer } from 'src/app/model/QuestionnaireAnswer';
     AutoCompleteModule,
     InputTextModule,
     DialogModule,
-    MessageModule
+    MessageModule,
+    DropdownModule
   ],
   templateUrl: './ru-table.component.html',
   styleUrl: './ru-table.component.scss'
@@ -36,6 +38,8 @@ export class RuTableComponent implements OnInit {
   @Output() speedDial =new EventEmitter<any>();
   visible: boolean=false;
   queAns!:Answer[];
+  selectedDropdown:string="";
+  @Output() headerDropdownSelected: EventEmitter<any> = new EventEmitter();
 
   @Input() headers!: any[];
   @Input() flag: boolean = false;
@@ -44,6 +48,7 @@ export class RuTableComponent implements OnInit {
   idx = 0;
   sBookId!:number;
   @Input() tableData!: any[][];
+  @Input() headerDropdown: any[] | undefined;
   items!: MenuItem[];
 
   constructor( private messageService: MessageService) { }
@@ -84,6 +89,7 @@ export class RuTableComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log(this.headerDropdown)
     this.items = [
       {
         icon: 'pi pi-pencil',
@@ -117,6 +123,9 @@ export class RuTableComponent implements OnInit {
         url: 'http://angular.io'
       }
     ];
+  }
+  headerDropdownChanged(){
+    this.headerDropdownSelected.emit(this.selectedDropdown);
   }
 
 }
