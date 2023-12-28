@@ -10,6 +10,8 @@ export class QuestionnaireAnswer{
     isMainMandatory!:boolean;
     fkEntityCode!:string;
     isActiveInd!:boolean;
+    isVisible!:boolean;
+	isRequiredField!:boolean;
     columnOrderId!:number;
     questionCategory!:string;
     questionVersion!:number;

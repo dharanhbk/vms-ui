@@ -150,7 +150,7 @@
                                 <!-- <input pInputText type="radio" [(ngModel)]="product.isActiveInd" required> -->
                             </ng-template>
                             <ng-template pTemplate="output">
-                                {{product.isActiveInd}}
+                                {{product.isActiveInd===true?'Yes':'No'}}
                             </ng-template>
                         </p-cellEditor>
                     </td>
