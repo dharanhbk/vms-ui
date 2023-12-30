@@ -3,7 +3,7 @@
         <span *ngFor="let qs of data">
             <span class="p-float-label" *ngIf="qs.questionDataType === 'text' || qs.questionDataType === 'number'">
                 <input class="decor" pInputText type="{{qs.questionDataType}}" id="{{qs.questionCode}}" [(ngModel)]="qs.answer" 
-                pTooltip="{{qs.questionDataType}}"/>
+                pTooltip="{{qs.questionDataType}} {{qs.isRequiredField?'required':''}}"/>
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>
             <span class="p-float-label" *ngIf="qs.questionDataType === 'dropdown'">

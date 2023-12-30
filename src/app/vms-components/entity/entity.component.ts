@@ -69,7 +69,9 @@ export class EntityComponent implements OnInit{
             { label: 'Number', value: 'number' },
             { label: 'Email', value: 'email' },
             { label: 'Check Box', value:'checkbox'},
-            { label: 'Dropdown', value:'dropdown'}
+            { label: 'Dropdown', value:'dropdown'},
+            { label: 'Date', value:'date'},
+            { label: 'Radio', value:'radio'},
         ];
     }
 
@@ -97,6 +99,18 @@ export class EntityComponent implements OnInit{
           this.selectedEntity = res['entityCode']
           this.mapBookingData(res)
         }, error: (err: any) => {
+          console.log(err)
+        }
+      })
+    }
+
+    saveEntityQuestionDetails(question:QuestionnaireAnswer) {
+      this.entityService.saveEntityQuestionDetl(question).subscribe({
+        next: (res: any) => {
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: 'question gets updated' });
+          console.log(res)
+        }, error: (err: any) => {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'question update failed' });
           console.log(err)
         }
       })
@@ -153,11 +167,14 @@ export class EntityComponent implements OnInit{
 
     onRowEditSave(question: QuestionnaireAnswer) {
         if (question.questionCode !=null) {
-            this.saveEntityDetails();
-            delete this.clonedProducts[question.questionId as number];
-            this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Product is updated' });
+         const qa = this.products.find(p=> p.questionId==question.questionId)!;
+         qa.fkEntityCode  = this.selectedEntity;
+         this.saveEntityQuestionDetails(qa);
+            // this.saveEntityDetails();
+          delete this.clonedProducts[question.questionId as number];
+            
         } else {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Price' });
+            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'question not found' });
         }
     }
 
