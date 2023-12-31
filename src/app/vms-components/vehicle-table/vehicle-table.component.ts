@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { RuTableComponent } from 'src/app/reusable/ru-table/ru-table.component';
+import { EntityService } from 'src/app/services/entity-service.service';
 import { VehicleService } from 'src/app/services/vehicle-service.service';
 
 @Component({
@@ -15,14 +16,27 @@ export class VehicleTableComponent {
   pTableData!:any[][];
   pHeaders!:any[];
   pFlag:boolean=false;
+  entities: any=[];
 
-  constructor(private _service: VehicleService, private messageService: MessageService) { }
-  ngOnInit(){
-    this.getVehicleDetails();
-  }
+  constructor(private _service: VehicleService, private messageService: MessageService,
+    private entityService:EntityService) { }
+    ngOnInit(){
+      this.getEntities();
+    }
+    getEntities() {
+      this.entityService.getAllEntityCards().subscribe({
+        next: (res: any) => {
+          console.log(res)
+          this.mapData(res);
+          this.getVehicleDetails(res!.data[0]!.entityCode);
+        }, error: (err: any) => {
+          console.log(err)
+        }
+      })
+    }
 
-  getVehicleDetails() {
-    this._service.getVehicleDetailsByEntityCode('1').subscribe({
+  getVehicleDetails(entityCode:any) {
+    this._service.getVehicleDetailsByEntityCode(entityCode).subscribe({
       next: (res: any) => {
         console.log(res)
         this.mapData(res)
@@ -38,5 +52,12 @@ export class VehicleTableComponent {
     this.pTableData = this.pTableData.slice(1, this.pTableData.length);
     const n = this.pTableData.length;
     this.pFlag = true;
+    res['data'].forEach((element:any) => {
+      this.entities.push({label:element.entityName, value: element.entityCode})
+    });
+  }
+  headerDropdownSelected(event:any){
+    console.log(event)
+    this.getVehicleDetails(event['value'])
   }
 }
