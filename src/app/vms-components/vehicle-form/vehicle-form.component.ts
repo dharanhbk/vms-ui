@@ -21,6 +21,8 @@ export class VehicleFormComponent {
   pData!: QuestionnaireAnswer[];
   pLoading: boolean = false;
   pOptionsMap=new Map();
+  pRadioOptionsMap=new Map();
+  pCheckboxOptionsMap=new Map();
   entities: any=[];
   selectedEntity: any;
 
@@ -69,11 +71,24 @@ export class VehicleFormComponent {
         let options:any[]=[];
         element!.possibleAnswers.split("|").forEach((e:any)=>options.push({label:e,value:e}));
         this.pOptionsMap.set(element['questionId'],options)
+      }else if(element.questionDataType==='radio'){
+        let options:any[]=[];
+        element!.possibleAnswers.split("|").forEach((e:any)=>options.push({name:e,category:e}));
+        this.pRadioOptionsMap.set(element['questionId'],options)
+      }else if(element.questionDataType==='checkbox'){
+        let options:any[]=[];
+        element!.possibleAnswers.split("|").forEach((e:any)=>options.push({name:e,category:e}));
+        this.pCheckboxOptionsMap.set(element['questionId'],options)
       }
     });
   }
 
   getPostData(queAns:QueAnsRequest) {
+    queAns.quesAnswers.map(e=>{
+      if(Array.isArray(e.answer)){
+        e.answer= e.answer.toString();
+      }
+    })
     this._service.saveVehcileDetails(queAns).subscribe({
       next: (res: any) => {
         console.log("inside postdata prent: ",res);

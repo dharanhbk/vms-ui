@@ -18,12 +18,18 @@
                 <label htmlFor={{qs.questionCode}}>{{qs.questionText}}</label>
             </span>
 
-            <!-- <span class="flex flex-wrap gap-3" *ngIf="qs.questionDataType === 'radio'">
-                <div *ngFor="let category of generateRadio(qs.possibleAnswers)" class="flex align-items-center field-checkbox">
+            <span class="flex flex-wrap gap-3" *ngIf="qs.questionDataType === 'radio'">
+                <div *ngFor="let category of generateRadio(qs.questionId)" class="flex align-items-center field-checkbox">
                     <p-radioButton id="category.key" name="category" [value]="category.name" [(ngModel)]="qs.answer"></p-radioButton>
                     <label htmlFor="category.key" class="ml-2">{{ category.name }}</label>
                 </div>
-            </span> -->
+            </span>
+            <span class="flex flex-wrap gap-3" *ngIf="qs.questionDataType === 'checkbox'">
+                <div *ngFor="let category of generateCheckbox(qs.questionId)" class="flex align-items-center field-checkbox">
+                    <p-checkbox  id="category.key" name="category" [value]="category.name" [(ngModel)]="qs.answer"></p-checkbox>
+                    <label htmlFor="category.key" class="ml-2">{{ category.name }}</label>
+                </div>
+            </span>
         </span>
     </div>
     <div>

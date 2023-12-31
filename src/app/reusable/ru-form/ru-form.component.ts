@@ -5,6 +5,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
+import { CheckboxModule } from 'primeng/checkbox';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -21,7 +22,7 @@ import { BookingService } from 'src/app/services/booking-service.service';
   imports: [
     DropdownModule, ButtonModule,ToastModule,
     FormsModule,CommonModule,AutoCompleteModule,InputTextModule,
-    ConfirmDialogModule,TooltipModule,CalendarModule,RadioButtonModule
+    ConfirmDialogModule,TooltipModule,CalendarModule,RadioButtonModule, CheckboxModule
   ],
   templateUrl: './ru-form.component.html',
   styleUrl: './ru-form.component.scss',
@@ -33,6 +34,8 @@ export class RuFormComponent implements OnChanges{
   @Input() data!: QuestionnaireAnswer[];
   @Input() loading: boolean = false;
   @Input() optionsMap=new Map();
+  @Input() radioOptionsMap=new Map();
+  @Input() checkboxOptionsMap=new Map();
   position: string = 'center';
   @Output() postQuesAns = new EventEmitter<QueAnsRequest>();
 
@@ -89,10 +92,11 @@ export class RuFormComponent implements OnChanges{
     return this.optionsMap.get(id)
   }
 
-  generateRadio(values:string){
-    const arr = values.split('|');
-    const darr = new Array();
-    arr.forEach(a=> darr.push({name:a , key:a}));
-    return darr;
+  generateRadio(id:any){
+
+    return this.radioOptionsMap.get(id);
+  }
+  generateCheckbox(id:any){
+    return this.checkboxOptionsMap.get(id);
   }
 }
