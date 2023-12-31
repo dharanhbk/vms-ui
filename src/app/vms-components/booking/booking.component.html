@@ -2,5 +2,7 @@
 [flag]="pFlag"
 [headers]="pHeaders"
 [headerDropdown]="entities"
+[totalRecords]="totalRecords"
 (headerDropdownSelected)="headerDropdownSelected($event)"
+(onPageChange)="onPageChange($event)"
 (speedDial)="getSpeedDialAction($event)"></app-ru-table>

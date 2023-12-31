@@ -24,8 +24,8 @@ export class DriverService {
     
    }
 
-  getDriverDetailsByEntityCode(entityCode:string){
-    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}`)
+  getDriverDetailsByEntityCode(entityCode:string,pageNo:number=0,fetchSize:number=5){
+    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}?pageNo=${pageNo}&fetchSize=${fetchSize}`)
   }
 
   getQuestionsByEntityCode(entityCode:string){

@@ -23,8 +23,8 @@ export class VehicleService {
     this.saveBooking=environment.resource_url+"/booking/v1.0/saveVehicleDetails";
    }
 
-  getVehicleDetailsByEntityCode(entityCode:string){
-    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}`)
+  getVehicleDetailsByEntityCode(entityCode:string,pageNo:number=0,fetchSize:number=5){
+    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}?pageNo=${pageNo}&fetchRecords=${fetchSize}`)
   }
 
   getQuestionsByEntityCode(entityCode:string){

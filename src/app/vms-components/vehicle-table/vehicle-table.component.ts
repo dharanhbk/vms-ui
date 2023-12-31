@@ -17,6 +17,10 @@ export class VehicleTableComponent {
   pHeaders!:any[];
   pFlag:boolean=false;
   entities: any=[];
+  totalRecords: any;
+  pageNo: number=0;
+  fetchRecords: number=5;
+  selectedEntityCode: any;
 
   constructor(private _service: VehicleService, private messageService: MessageService,
     private entityService:EntityService) { }
@@ -28,6 +32,7 @@ export class VehicleTableComponent {
         next: (res: any) => {
           console.log(res)
           this.mapData(res);
+          this.selectedEntityCode = res!.data[0]!.entityCode;
           this.getVehicleDetails(res!.data[0]!.entityCode);
         }, error: (err: any) => {
           console.log(err)
@@ -36,7 +41,7 @@ export class VehicleTableComponent {
     }
 
   getVehicleDetails(entityCode:any) {
-    this._service.getVehicleDetailsByEntityCode(entityCode).subscribe({
+    this._service.getVehicleDetailsByEntityCode(entityCode,this.pageNo,this.fetchRecords).subscribe({
       next: (res: any) => {
         console.log(res)
         this.mapData(res)
@@ -52,12 +57,23 @@ export class VehicleTableComponent {
     this.pTableData = this.pTableData.slice(1, this.pTableData.length);
     const n = this.pTableData.length;
     this.pFlag = true;
+    this.totalRecords=res['totalCount'];
     res['data'].forEach((element:any) => {
       this.entities.push({label:element.entityName, value: element.entityCode})
     });
   }
   headerDropdownSelected(event:any){
     console.log(event)
+    this.pageNo=0;
+    this.fetchRecords=5;
+    this.selectedEntityCode = event['value'];
     this.getVehicleDetails(event['value'])
   }
+  onPageChange(event:any){
+    console.log(event)
+    this.pageNo=event['first'] / event['rows']
+    this.fetchRecords=event['rows']
+    this.getVehicleDetails(this.selectedEntityCode)
+  }
+
 }

@@ -40,6 +40,7 @@ export class RuTableComponent implements OnInit {
   queAns!:Answer[];
   selectedDropdown:string="";
   @Output() headerDropdownSelected: EventEmitter<any> = new EventEmitter();
+  @Output() onPageChange: EventEmitter<any> = new EventEmitter();
 
   @Input() headers!: any[];
   @Input() flag: boolean = false;
@@ -47,6 +48,7 @@ export class RuTableComponent implements OnInit {
   rows = 10;
   idx = 0;
   sBookId!:number;
+  @Input() totalRecords:number=0;
   @Input() tableData!: any[][];
   @Input() headerDropdown: any[] | undefined;
   items!: MenuItem[];
@@ -126,6 +128,10 @@ export class RuTableComponent implements OnInit {
   }
   headerDropdownChanged(){
     this.headerDropdownSelected.emit(this.selectedDropdown);
+  }
+  loadData(event:any){
+      console.log(event)
+      this.onPageChange.emit(event);
   }
 
 }

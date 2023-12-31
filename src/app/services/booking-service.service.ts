@@ -25,8 +25,8 @@ export class BookingService {
     this.getBookingDetlById=environment.resource_url+"/booking/v1.0/getBookingDetailsById";
    }
 
-  getBookingDetailsByEntityCode(entityCode:string){
-    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}`)
+  getBookingDetailsByEntityCode(entityCode:string,pageNo:number=0,fetchSize:number=5){
+    return this.http.get(`${this.getBookingDetailsUrl}/${entityCode}?pageNo=${pageNo}&fetchSize=${fetchSize}`)
   }
 
   getQuestionsByEntityCode(entityCode:string){
