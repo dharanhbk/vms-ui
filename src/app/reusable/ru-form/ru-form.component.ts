@@ -8,6 +8,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
 import { Answer, QueAnsRequest } from 'src/app/model/Booking';
@@ -20,7 +21,7 @@ import { BookingService } from 'src/app/services/booking-service.service';
   imports: [
     DropdownModule, ButtonModule,ToastModule,
     FormsModule,CommonModule,AutoCompleteModule,InputTextModule,
-    ConfirmDialogModule,TooltipModule,CalendarModule
+    ConfirmDialogModule,TooltipModule,CalendarModule,RadioButtonModule
   ],
   templateUrl: './ru-form.component.html',
   styleUrl: './ru-form.component.scss',
@@ -86,5 +87,12 @@ export class RuFormComponent implements OnChanges{
   }
   getdropdownOptions(id:any){
     return this.optionsMap.get(id)
+  }
+
+  generateRadio(values:string){
+    const arr = values.split('|');
+    const darr = new Array();
+    arr.forEach(a=> darr.push({name:a , key:a}));
+    return darr;
   }
 }

@@ -49,7 +49,9 @@
 :host ::ng-deep .p-speeddial-button{
     // content: '1' !important;
     border-radius: 50px !important;
+    height: 30px;
+    width:30px;
   }
 :host ::ng-deep .p-speeddial{
-position:sticky;
+// position:sticky;
   }
